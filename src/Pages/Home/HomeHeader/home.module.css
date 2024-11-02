@@ -1,0 +1,26 @@
+.headerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.headerImage {
+  width: 80%;
+  border-radius: 15px;
+  object-fit: cover;
+  max-height: 400px;
+  max-width: 1200px; /* Added max-width to prevent image from getting too wide */
+  height: auto; /* Maintain aspect ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make image more compact on mobile devices */
+@media screen and (max-width: 768px) {
+  .headerImage {
+    width: 90%;
+    max-height: 120px; /* Adjusted to exactly 120px as requested */
+    height: 120px; /* Force height to be exactly 120px at this breakpoint */
+    object-fit: contain; /* Changed from 'cover' to 'contain' */
+  }
+}

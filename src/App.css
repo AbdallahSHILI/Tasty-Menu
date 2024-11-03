@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #ea4c89;
+  --secondary-color: #e7e7e9;
+  --white-color: #ffffff;
+  --border-radius: 20px;
+}
+
 .App {
   text-align: center;
 }

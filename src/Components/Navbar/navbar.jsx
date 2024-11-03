@@ -1,12 +1,20 @@
 import React from "react";
 import styles from "./navbar.module.css";
+import PositionIcon from "../../Components/Assets/Position.svg";
+import SearchIcon from "../../Components/Assets/SearchIcon.svg";
 
 const Navbar = () => {
-  // Changed to capital N for component naming convention
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>Tasty</div>
-      <div className={styles.searchIcon}>Icon</div>
+      <div className={styles.leftSection}>
+        <img
+          src={PositionIcon}
+          className={styles.positionIcon}
+          alt="PositionIcon"
+        />
+        <div className={styles.logo}>Tasty, Cite Ezzouhour</div>
+      </div>
+      <img src={SearchIcon} className={styles.searchIcon} alt="SearchIcon" />
     </nav>
   );
 };

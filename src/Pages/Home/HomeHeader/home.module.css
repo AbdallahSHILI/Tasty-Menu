@@ -6,11 +6,12 @@
 }
 
 .headerImage {
-  width: 80%;
+  width: 90%; /* Increased from 80% to 90% for better full width appearance */
   border-radius: 15px;
-  object-fit: cover;
-  max-height: 400px;
-  max-width: 1200px; /* Added max-width to prevent image from getting too wide */
+  background-color: #f9db08;
+  object-fit: contain; /* Changed to contain to ensure image fits well */
+  max-height: 200px; /* Increased max-height for better full width display */
+  max-width: 1400px; /* Increased max-width for larger screens */
   height: auto; /* Maintain aspect ratio */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -19,8 +20,8 @@
 @media screen and (max-width: 768px) {
   .headerImage {
     width: 90%;
-    max-height: 120px; /* Adjusted to exactly 120px as requested */
-    height: 120px; /* Force height to be exactly 120px at this breakpoint */
-    object-fit: contain; /* Changed from 'cover' to 'contain' */
+    max-height: 120px;
+    height: 120px;
+    object-fit: contain;
   }
 }

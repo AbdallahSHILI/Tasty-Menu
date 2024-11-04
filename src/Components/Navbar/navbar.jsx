@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
-import PositionIcon from "../../Components/Assets/Position.svg";
-import SearchIcon from "../../Components/Assets/SearchIcon.svg";
+import PositionIcon from "../Assets/Position.svg";
+import SearchIcon from "../Assets/Search.svg";
 
 const Navbar = () => {
   return (

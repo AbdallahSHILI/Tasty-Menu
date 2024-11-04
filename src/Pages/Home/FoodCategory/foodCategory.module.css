@@ -3,28 +3,6 @@
   margin: 20px 0;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-.seeMore {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #ff4d4d;
-  cursor: pointer;
-  font-weight: 500;
-}
-
 .arrowIcon {
   font-size: 0.9rem;
   transition: transform 0.3s ease;
@@ -88,5 +66,12 @@
 
   .categoryItem {
     min-width: 70px;
+  }
+
+  .seeMoreIcon {
+    width: 30px;
+    height: 25px;
+    object-fit: contain;
+    margin-top: 1px;
   }
 }

@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.seeMore {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.seeMoreIcon {
+  width: 30px;
+  height: 25px;
+  object-fit: contain;
+  margin-top: 1px;
+}

@@ -1,18 +1,12 @@
 import React from "react";
 import styles from "./foodCategory.module.css";
+import { FoodCategoryHeader } from "../../index";
 
 const FoodCategory = () => {
   return (
     <div className={styles.container}>
       {/* Header Section */}
-      <div className={styles.header}>
-        <h2 className={styles.title}>Food Category</h2>
-        <div className={styles.seeMore}>
-          <span>See More</span>
-          icon
-        </div>
-      </div>
-
+      <FoodCategoryHeader />
       {/* Categories Section */}
       <div className={styles.categories}>
         <div className={styles.categoryItem}>

@@ -1,0 +1,92 @@
+.menuContainer {
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.categoryTitle {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.subcategory {
+  margin-bottom: 30px;
+}
+
+.subcategoryTitle {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.menuItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.menuItem {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menuItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.itemName {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.ingredients {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .menuContainer {
+    padding: 15px;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .subcategoryTitle {
+    font-size: 1.2rem;
+  }
+
+  .menuItems {
+    grid-template-columns: 1fr;
+  }
+
+  .menuItem {
+    padding: 12px;
+  }
+}

@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./home.module.css";
-import { HomeHeader, FoodCategory } from "../index";
+import { HomeHeader, FoodCategory, Menu } from "../index";
+
 const Home = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <HomeHeader />
       <FoodCategory />
+      <Menu />
     </div>
   );
 };

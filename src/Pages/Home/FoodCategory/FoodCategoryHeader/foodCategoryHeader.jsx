@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./foodCategoryHeader.module.css";
 import seeMoreIcon from "../../../../Components/Assets/SeeMoreIcon.svg";
 
-const foodCategory = () => {
+const foodCategoryHeader = () => {
   return (
     <div className={styles.header}>
       <h2 className={styles.title}>Food Category</h2>
@@ -14,4 +14,4 @@ const foodCategory = () => {
   );
 };
 
-export default foodCategory;
+export default foodCategoryHeader;

@@ -1,6 +1,11 @@
 .container {
+  background-color: var(--secondary-color);
   padding: 20px;
   margin: 20px 0;
+}
+
+.categories {
+  background-color: var(--secondary-color);
 }
 
 .arrowIcon {
@@ -10,44 +15,6 @@
 
 .seeMore:hover .arrowIcon {
   transform: translateX(5px);
-}
-
-.categories {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px 0;
-}
-
-.categoryItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  min-width: 80px;
-}
-
-.iconWrapper {
-  background-color: #fff1f1;
-  padding: 15px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
-}
-
-.categoryIcon {
-  font-size: 1.5rem;
-  color: #ff4d4d;
-}
-
-.categoryItem span {
-  font-size: 0.9rem;
-  color: #333;
-  font-weight: 500;
-}
-
-.categoryItem:hover .iconWrapper {
-  background-color: #ffe6e6;
 }
 
 /* Make it responsive */

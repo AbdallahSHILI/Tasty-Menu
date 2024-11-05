@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./foodCategory.module.css";
-import { FoodCategoryHeader } from "../../index";
+import { FoodCategoryHeader, MainFood } from "../../index";
 
 const FoodCategory = () => {
   return (
@@ -8,19 +8,7 @@ const FoodCategory = () => {
       {/* Header Section */}
       <FoodCategoryHeader />
       {/* Categories Section */}
-      <div className={styles.categories}>
-        <div className={styles.categoryItem}>
-          <div className={styles.iconWrapper}>icon</div>
-          <span>Pizza</span>
-        </div>
-
-        <div className={styles.categoryItem}>
-          <div className={styles.iconWrapper}>iconn</div>
-          <span>Soup</span>
-        </div>
-
-        {/* Add more categories as needed */}
-      </div>
+      <MainFood />
     </div>
   );
 };

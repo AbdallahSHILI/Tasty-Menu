@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./navbar.module.css";
 import PositionIcon from "../Assets/Position.svg";
-import SearchIcon from "../Assets/Search.svg";
+import IceCreamIcon from "../Assets/Navbar_Ice_Cream.svg";
 
 const Navbar = () => {
   return (
@@ -14,7 +14,11 @@ const Navbar = () => {
         />
         <div className={styles.logo}>Tasty, Cite Ezzouhour</div>
       </div>
-      <img src={SearchIcon} className={styles.searchIcon} alt="SearchIcon" />
+      <img
+        src={IceCreamIcon}
+        className={styles.iceCreamIcon}
+        alt="IceCreamIcon"
+      />
     </nav>
   );
 };

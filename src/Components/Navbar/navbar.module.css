@@ -1,37 +1,35 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--secondary-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  background-color: white;
 }
 
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-  cursor: pointer;
+  font-weight: 500;
 }
 
 .positionIcon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  object-fit: contain;
+  width: 24px;
+  height: 24px;
 }
 
-.searchIcon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  object-fit: contain;
+.iceCreamIcon {
+  width: 35px;
+  height: 35px;
+  margin-left: auto;
 }
 
 /* For mobile devices */

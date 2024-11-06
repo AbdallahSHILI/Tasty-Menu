@@ -20,7 +20,8 @@
 /* Make it responsive */
 @media screen and (max-width: 768px) {
   .container {
-    padding: 15px;
+    padding: 0px;
+    margin: 0px auto;
   }
 
   .title {

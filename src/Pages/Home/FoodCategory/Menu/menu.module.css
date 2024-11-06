@@ -7,7 +7,7 @@
 }
 
 .categoryTitle {
-  color: var(--primary-color);
+  color: Black;
   font-size: 1.8rem;
   margin-bottom: 20px;
   text-align: center;
@@ -76,6 +76,7 @@
 
   .categoryTitle {
     font-size: 1.5rem;
+    margin-top: -9px;
   }
 
   .subcategoryTitle {
@@ -88,5 +89,77 @@
 
   .menuItem {
     padding: 12px;
+  }
+}
+
+.subcategorySelector {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+  justify-content: center;
+  background-color: var(--primary-color);
+  padding: 4px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioText {
+  font-size: 1rem;
+  color: white;
+}
+
+.radioInput:checked + .radioText {
+  color: var(--primary-color);
+}
+
+.radioLabel:has(.radioInput:checked) {
+  background-color: white;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.categoryTitle {
+  color: Black;
+  font-size: 1.8rem;
+  text-align: left;
+  margin: 0;
+}
+
+.galerieIcon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .headerContainer {
+    margin-bottom: 15px;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .galerieIcon {
+    width: 35px;
+    height: 35px;
   }
 }

@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./menu.module.css";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
+import GalerieIcon from "../../../../Components/Assets/Galerie.svg"; // Adjust the path as needed
 
 const Menu = () => {
   const { selectedCategory } = useMenu();
   const currentMenu = menuData[selectedCategory];
+  const [selectedSubcategory, setSelectedSubcategory] = useState(
+    currentMenu?.subcategories
+      ? Object.keys(currentMenu.subcategories)[0]
+      : null
+  );
 
   if (!currentMenu) return null;
 
@@ -23,20 +29,38 @@ const Menu = () => {
 
   return (
     <div className={styles.menuContainer}>
-      <h2 className={styles.categoryTitle}>{currentMenu.category}</h2>
-      
+      <div className={styles.headerContainer}>
+        <h2 className={styles.categoryTitle}>{currentMenu.category}</h2>
+        <img src={GalerieIcon} alt="Galerie" className={styles.galerieIcon} />
+      </div>
+
+      {currentMenu.subcategories && (
+        <div className={styles.subcategorySelector}>
+          {Object.entries(currentMenu.subcategories).map(
+            ([key, subcategory]) => (
+              <label key={key} className={styles.radioLabel}>
+                <input
+                  type="radio"
+                  name="subcategory"
+                  value={key}
+                  checked={selectedSubcategory === key}
+                  onChange={(e) => setSelectedSubcategory(e.target.value)}
+                  className={styles.radioInput}
+                />
+                <span className={styles.radioText}>{subcategory.title}</span>
+              </label>
+            )
+          )}
+        </div>
+      )}
+
       {currentMenu.subcategories ? (
-        // For menus with subcategories (Crêpes, Gaufres, etc.)
-        Object.entries(currentMenu.subcategories).map(([key, subcategory]) => (
-          <div key={key} className={styles.subcategory}>
-            <h3 className={styles.subcategoryTitle}>{subcategory.title}</h3>
-            <div className={styles.menuItems}>
-              {renderMenuItems(subcategory.items)}
-            </div>
-          </div>
-        ))
+        <div className={styles.menuItems}>
+          {renderMenuItems(
+            currentMenu.subcategories[selectedSubcategory].items
+          )}
+        </div>
       ) : (
-        // For menus without subcategories (Bubbles, Malfouf, etc.)
         <div className={styles.menuItems}>
           {renderMenuItems(currentMenu.items)}
         </div>

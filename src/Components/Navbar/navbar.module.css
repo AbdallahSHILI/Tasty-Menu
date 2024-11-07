@@ -11,6 +11,11 @@
   background-color: white;
 }
 
+.menuIcon {
+  width: 24px;
+  height: 24px;
+}
+
 .leftSection {
   display: flex;
   align-items: center;

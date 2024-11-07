@@ -1,0 +1,50 @@
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.categoryItem {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.categoryName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.subcategoriesList {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 15px;
+}
+
+.subcategoryItem {
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}

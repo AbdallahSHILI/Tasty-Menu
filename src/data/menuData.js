@@ -1,398 +1,356 @@
+import Crepe from "../Components/Assets/Crepe.svg";
+import Gaufre from "../Components/Assets/Gauffre.svg";
+import Bubble from "../Components/Assets/bubble.svg";
+import Waffle from "../Components/Assets/Waffle.svg";
+import Boissons from "../Components/Assets/Boissons.svg";
+import IceCream from "../Components/Assets/Ice_Cream.svg";
+import Malfouf from "../Components/Assets/Malfouf.svg";
+import Jwajem from "../Components/Assets/Jwajem.svg";
+
+export const iconMap = {
+  1: Crepe,
+  2: Gaufre,
+  3: Bubble,
+  4: Waffle,
+  5: Boissons,
+  6: IceCream,
+  7: Malfouf,
+  8: Jwajem,
+};
+
 export const menuData = {
   1: {
-    // Crepe menu
     category: "Crêpe",
+    icon: iconMap[1],
     subcategories: {
       sweet: {
-        title: "Crêpes Sucrées",
+        title: "Crêpe Sucrée",
         items: [
           {
             id: "s1",
-            name: "Crêpe Chocolat",
+            name: "Chocolat",
             price: "7.000",
-            ingredients: "Nutella / Chocolat blanc / Kinder bueno",
           },
           {
             id: "s2",
-            name: "Crêpe Fruits Secs",
+            name: "Fruits Secs",
             price: "9.000",
-            ingredients: "Amandes / Noisettes / Noix",
           },
           {
             id: "s3",
-            name: "Crêpe Banane",
+            name: "Banane",
             price: "9.000",
-            ingredients: "Banane fraîche / Nutella",
           },
           {
             id: "s4",
-            name: "Crêpe Oreo",
+            name: "Oreo",
             price: "9.000",
-            ingredients: "Biscuits Oreo / Crème / Chocolat",
           },
           {
             id: "s5",
-            name: "Crêpe Speculoos",
+            name: "Speculoos",
             price: "9.000",
-            ingredients: "Pâte Speculoos / Biscuits Speculoos",
           },
           {
             id: "s6",
-            name: "Crêpe Tasty",
+            name: "Tasty",
             price: "10.000",
-            ingredients: "Nutella / Fruits secs / Banane",
+            ingredients: "Chocolat / Banane / Fruits secs / Chantilly",
           },
           {
             id: "s7",
-            name: "Crêpe Ferrero",
+            name: "Ferrero",
             price: "10.000",
-            ingredients: "Ferrero Rocher / Chocolat / Noisettes",
           },
           {
             id: "s8",
-            name: "Crêpe Snickers",
+            name: "Snickers",
             price: "10.000",
-            ingredients: "Snickers / Chocolat / Cacahuètes",
           },
           {
             id: "s9",
-            name: "Crêpe Pistache",
+            name: "Pistache",
             price: "12.000",
-            ingredients: "Crème de Pistache / Pistaches concassées",
           },
         ],
       },
       savory: {
-        title: "Crêpes Salées",
+        title: "Crêpe Salée",
         items: [
           {
             id: "sv1",
-            name: "Crêpe Thon",
+            name: "Thon",
             price: "7.000",
-            ingredients: "Thon / Fromage / Salade",
+            ingredients: "Thon / Fromage / Sauce piquante",
           },
           {
             id: "sv2",
-            name: "Crêpe Salami",
+            name: "Salami",
             price: "7.000",
-            ingredients: "Salami / Fromage / Salade",
+            ingredients: "Salami / Fromage / Sauce piquante",
           },
           {
             id: "sv3",
-            name: "Crêpe Jambon",
+            name: "Jambon",
             price: "7.000",
-            ingredients: "Jambon / Fromage / Salade",
+            ingredients: "Jambon / Fromage / Sauce piquante",
           },
           {
             id: "sv4",
-            name: "Crêpe Tunisienne",
+            name: "Tunisienne",
             price: "8.000",
-            ingredients: "Thon / Œuf / Pommes de terre / Harissa",
+            ingredients: "Thon / Fromage / Sauce piquante / Œuf",
           },
           {
             id: "sv5",
-            name: "Crêpe Spéciale",
+            name: "Spéciale",
             price: "9.000",
-            ingredients: "Poulet / Fromage / Champignons",
+            ingredients:
+              "Thon / Salami / Jambon / Fromage / Œuf / Sauce piquante ",
           },
           {
             id: "sv6",
-            name: "Crêpe Tasty Salée",
+            name: "Tasty",
             price: "9.000",
-            ingredients: "Viande hachée / Fromage / Légumes",
+            ingredients:
+              "Escalope / Fromage / Légumes grillés / Sauce piquante",
           },
           {
             id: "sv7",
-            name: "Crêpe Pizza",
+            name: "Pizza",
             price: "9.000",
-            ingredients: "Sauce pizza / Fromage / Champignons / Olives",
+            ingredients: "Sauce pizza / Fromage Arbi / Thon / Salade",
           },
         ],
       },
     },
   },
   2: {
-    // Gaufre menu
     category: "Gaufre",
+    icon: iconMap[2],
     subcategories: {
       sweet: {
-        title: "Gaufres Sucrées",
+        title: "Gaufre Sucrée",
         items: [
           {
             id: "s1",
-            name: "Gaufre Chocolat",
+            name: "Chocolat",
             price: "7.000",
-            ingredients: "Nutella / Chocolat blanc / Kinder bueno",
           },
           {
             id: "s2",
-            name: "Gaufre Fruits Secs",
+            name: "Fruits Secs",
             price: "9.000",
-            ingredients: "Amandes / Noisettes / Noix",
           },
           {
             id: "s3",
-            name: "Gaufre Banane",
+            name: "Banane",
             price: "9.000",
-            ingredients: "Banane fraîche / Nutella",
           },
           {
             id: "s4",
-            name: "Gaufre Oreo",
+            name: "Oreo",
             price: "9.000",
-            ingredients: "Biscuits Oreo / Crème / Chocolat",
           },
           {
             id: "s5",
-            name: "Gaufre Speculoos",
+            name: "Speculoos",
             price: "9.000",
-            ingredients: "Pâte Speculoos / Biscuits Speculoos",
           },
           {
             id: "s6",
-            name: "Gaufre Tasty",
+            name: "Tasty",
             price: "10.000",
-            ingredients: "Nutella / Fruits secs / Banane",
+            ingredients: "Chocolat / Banane / Fruits secs / Chantilly",
           },
           {
             id: "s7",
-            name: "Gaufre Ferrero",
+            name: "Ferrero",
             price: "10.000",
-            ingredients: "Ferrero Rocher / Chocolat / Noisettes",
           },
           {
             id: "s8",
-            name: "Gaufre Snickers",
+            name: "Snickers",
             price: "10.000",
-            ingredients: "Snickers / Chocolat / Cacahuètes",
           },
           {
             id: "s9",
-            name: "Gaufre Pistache",
+            name: "Pistache",
             price: "12.000",
-            ingredients: "Crème de Pistache / Pistaches concassées",
           },
         ],
       },
       savory: {
-        title: "Gaufres Salées",
+        title: "Gaufre Salée",
         items: [
           {
             id: "sv1",
-            name: "Gaufre Thon",
+            name: "Thon",
             price: "7.000",
-            ingredients: "Thon / Fromage / Salade",
+            ingredients: "Thon / Fromage / Sauce piquante",
           },
           {
             id: "sv2",
-            name: "Gaufre Salami",
+            name: "Salami",
             price: "7.000",
-            ingredients: "Salami / Fromage / Salade",
+            ingredients: "Salami / Fromage / Sauce piquante",
           },
           {
             id: "sv3",
-            name: "Gaufre Jambon",
+            name: "Jambon",
             price: "7.000",
-            ingredients: "Jambon / Fromage / Salade",
+            ingredients: "Jambon / Fromage / Sauce piquante",
           },
         ],
       },
     },
   },
   3: {
-    // Bubbles menu
     category: "Bubbles",
+    icon: iconMap[3],
     items: [
       {
         id: "b1",
-        name: "Bubble Chocolat",
+        name: "Chocolat",
         price: "7.000",
-        ingredients: "Lait / Chocolat / Perles de tapioca",
       },
       {
         id: "b2",
-        name: "Bubble Ice",
+        name: "Ice",
         price: "8.500",
-        ingredients: "Thé glacé / Perles de tapioca / Sirop au choix",
       },
       {
         id: "b3",
-        name: "Bubble Oreo",
+        name: "Oreo",
         price: "8.500",
-        ingredients: "Lait / Biscuits Oreo / Perles de tapioca",
       },
       {
         id: "b4",
         name: "Bubble Speculoos",
         price: "8.500",
-        ingredients: "Lait / Speculoos / Perles de tapioca",
       },
       {
         id: "b5",
         name: "Bubble Fruits Secs",
         price: "9.000",
-        ingredients: "Lait / Mélange de fruits secs / Perles de tapioca",
       },
       {
         id: "b6",
-        name: "Bubble Banane",
+        name: "Banane",
         price: "9.000",
-        ingredients: "Lait / Banane fraîche / Perles de tapioca",
       },
       {
         id: "b7",
-        name: "Bubble Tasty",
+        name: "Tasty",
         price: "12.000",
         ingredients:
-          "Lait / Fruits secs / Banane / Perles de tapioca / Toppings spéciaux",
+          "Chocolat / Fruits secs / Oreo / Speculoos / Ice / Supplément chocolat",
       },
     ],
   },
   4: {
-    // Jwajem menu
-    category: "Jwajem",
+    category: "Waffle",
+    icon: iconMap[4],
     subcategories: {
-      natural: {
-        title: "Jwajem Naturel",
+      sweet: {
+        title: "Waffle Sucrée",
         items: [
           {
-            id: "jn1",
-            name: "Petit Naturel",
-            price: "6.000",
-            ingredients: "Jwajem nature / Sucre glace",
-          },
-          {
-            id: "jn2",
-            name: "Moyen Naturel",
+            id: "ws1",
+            name: "Kids",
             price: "7.000",
-            ingredients: "Jwajem nature / Sucre glace",
+            ingredients: "Chocolat / M&Ms / Croquette / Chantilly",
           },
           {
-            id: "jn3",
-            name: "Grand Naturel",
-            price: "8.500",
-            ingredients: "Jwajem nature / Sucre glace",
+            id: "ws2",
+            name: "Ice",
+            price: "8.000",
+            ingredients: "Chocolat / 2 Boules Glaces / Chantilly",
+          },
+          {
+            id: "ws3",
+            name: "Banane",
+            price: "8.000",
+            ingredients: "Chocolat / Banane / Chantilly",
+          },
+          {
+            id: "ws4",
+            name: "Speculoos",
+            price: "9.000",
+            ingredients:
+              "Chocolat / Boule Glace / Biscuit speculoos / Caramel / Chantilly",
+          },
+          {
+            id: "ws5",
+            name: "Oreo",
+            price: "9.000",
+            ingredients: "Chocolat / Boule Glace / Biscuit Oreo / Chantilly",
           },
         ],
       },
-      special: {
-        title: "Jwajem Spécial",
+      savory: {
+        title: "Waffle Salée",
         items: [
           {
-            id: "js1",
-            name: "Petit Chocolat",
+            id: "wv1",
+            name: "Thon",
             price: "7.000",
-            ingredients: "Jwajem / Nutella / Chocolat",
+            ingredients: "Thon / Fromage / Salade / Sauce piquante ",
           },
           {
-            id: "js2",
-            name: "Moyen Chocolat",
-            price: "8.000",
-            ingredients: "Jwajem / Nutella / Chocolat",
+            id: "wv2",
+            name: "Salami",
+            price: "7.000",
+            ingredients: "Salami / Fromage / Salade / Sauce piquante  ",
           },
           {
-            id: "js3",
-            name: "Grand Chocolat",
-            price: "9.500",
-            ingredients: "Jwajem / Nutella / Chocolat",
-          },
-          {
-            id: "js4",
-            name: "Jwajem Oreo",
-            price: "8.000",
-            ingredients: "Jwajem / Biscuits Oreo / Crème",
-          },
-          {
-            id: "js5",
-            name: "Jwajem Speculoos",
-            price: "8.000",
-            ingredients: "Jwajem / Pâte Speculoos / Biscuits",
-          },
-          {
-            id: "js6",
-            name: "Jwajem Chantilly",
-            price: "8.000",
-            ingredients: "Jwajem / Crème Chantilly / Topping au choix",
+            id: "wv3",
+            name: "Jambon",
+            price: "7.000",
+            ingredients: "Jambon / Fromage / Salade / Sauce piquante ",
           },
         ],
       },
     },
   },
   5: {
-    // Malfouf menu
     category: "Malfouf",
+    icon: iconMap[5],
     items: [
       {
         id: "m1",
         name: "Malfouf Thon",
         price: "5.500",
-        ingredients: "Thon / Fromage / Salade / Mayonnaise",
+        ingredients: "Thon / Fromage / Sauce piquante",
       },
       {
         id: "m2",
         name: "Malfouf Salami",
         price: "5.500",
-        ingredients: "Salami / Fromage / Salade / Mayonnaise",
+        ingredients: "Salami / Fromage / Sauce piquante",
       },
       {
         id: "m3",
         name: "Malfouf Jambon",
         price: "5.500",
-        ingredients: "Jambon / Fromage / Salade / Mayonnaise",
+        ingredients: "Jambon / Fromage / Sauce piquante ",
       },
       {
         id: "m4",
         name: "Malfouf Escalope",
         price: "7.000",
-        ingredients: "Escalope de poulet / Fromage / Salade / Mayonnaise",
+        ingredients: "Escalope / Fromage / Légumes grillés / Sauce piquante ",
       },
       {
         id: "m5",
-        name: "Malfouf Omelette",
+        name: "Omelette",
         price: "7.000",
-        ingredients: "Omelette / Fromage / Salade / Mayonnaise",
       },
     ],
   },
   6: {
-    // Coffee menu
-    category: "Café",
-    items: [
-      {
-        id: "c1",
-        name: "Express",
-        price: "3.000",
-        ingredients: "Café express",
-      },
-      {
-        id: "c2",
-        name: "Café au lait",
-        price: "3.500",
-        ingredients: "Café / Lait chaud",
-      },
-      {
-        id: "c3",
-        name: "Capuccin",
-        price: "3.500",
-        ingredients: "Café / Lait chaud / Mousse de lait",
-      },
-      {
-        id: "c4",
-        name: "Américain",
-        price: "3.000",
-        ingredients: "Café allongé",
-      },
-      {
-        id: "c5",
-        name: "Capuccino",
-        price: "5.000",
-        ingredients: "Café / Lait / Mousse de lait / Chantilly / Cacao",
-      },
-    ],
-  },
-  7: {
-    // Waffle menu
     category: "Waffle",
+    icon: iconMap[6],
     subcategories: {
       sweet: {
         title: "Waffle Sucrée",
@@ -454,9 +412,10 @@ export const menuData = {
       },
     },
   },
-  8: {
-    // Rolled Ice Cream menu
+
+  7: {
     category: "Glaces Roulées",
+    icon: iconMap[7],
     items: [
       {
         id: "r1",
@@ -497,9 +456,46 @@ export const menuData = {
       },
     ],
   },
+
+  8: {
+    category: "Café",
+    icon: iconMap[8],
+    items: [
+      {
+        id: "c1",
+        name: "Express",
+        price: "3.000",
+        ingredients: "Café express",
+      },
+      {
+        id: "c2",
+        name: "Café au lait",
+        price: "3.500",
+        ingredients: "Café / Lait chaud",
+      },
+      {
+        id: "c3",
+        name: "Capuccin",
+        price: "3.500",
+        ingredients: "Café / Lait chaud / Mousse de lait",
+      },
+      {
+        id: "c4",
+        name: "Américain",
+        price: "3.000",
+        ingredients: "Café allongé",
+      },
+      {
+        id: "c5",
+        name: "Capuccino",
+        price: "5.000",
+        ingredients: "Café / Lait / Mousse de lait / Chantilly / Cacao",
+      },
+    ],
+  },
   9: {
-    // Drinks menu
     category: "Boissons",
+    icon: iconMap[9],
     subcategories: {
       juices: {
         title: "Jus Frais",

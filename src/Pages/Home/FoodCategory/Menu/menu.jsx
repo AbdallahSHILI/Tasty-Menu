@@ -22,7 +22,9 @@ const Menu = () => {
           <h3 className={styles.itemName}>{item.name}</h3>
           <span className={styles.price}>{item.price} DT</span>
         </div>
-        <p className={styles.ingredients}>{item.ingredients}</p>
+        {item.ingredients && (
+          <p className={styles.ingredients}>{item.ingredients}</p>
+        )}
       </div>
     ));
   };

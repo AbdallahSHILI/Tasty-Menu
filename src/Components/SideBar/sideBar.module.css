@@ -16,18 +16,17 @@
 }
 
 .categoryItem {
-  padding: 12px 30px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 18px;
+  margin-left: 30px;
 }
 
 .categoryName {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.2rem;
-  color: #333;
-  cursor: pointer;
-  padding: 8px 0;
-  font-weight: 600;
+  gap: 10px;
 }
 
 .categoryIcon {
@@ -65,4 +64,23 @@
 
 .arrow.expanded {
   transform: rotate(180deg);
+}
+
+.homeItem {
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.homeIcon {
+  width: 28px;
+  height: 28px;
+  margin-left: 5px;
+}
+
+.homeName {
+  margin-left: -30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }

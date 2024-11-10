@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./sideBar.module.css";
 import { menuData } from "../../data/menuData";
@@ -15,10 +15,29 @@ const categoryRoutes = {
   8: "/cafe",
 };
 
-const SideBar = ({ isOpen }) => {
+const SideBar = ({ isOpen, onClose }) => {
+  // Handle clicks outside the sidebar
+  const sidebarRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
-    <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
-      <Link to="/" className={`${styles.categoryItem} ${styles.homeItem}`}>
+    <div 
+      ref={sidebarRef}
+      className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
+    >
+      <Link to="/" className={`${styles.categoryItem} ${styles.homeItem}`} onClick={onClose}>
         <div className={styles.homeName}>
           <img src={HomeIcon} alt="Home" className={styles.homeIcon} />
           <span className={styles.categoryText}>Accueil</span>
@@ -29,6 +48,7 @@ const SideBar = ({ isOpen }) => {
           key={id}
           to={categoryRoutes[id] || "/"}
           className={styles.categoryItem}
+          onClick={onClose}
         >
           <div className={styles.categoryName}>
             <img

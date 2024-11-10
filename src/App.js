@@ -10,14 +10,18 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen((prevState) => !prevState);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
   };
 
   return (
     <MenuProvider>
       <Router>
-        <Navbar toggleSidebar={toggleSidebar} />
-        <SideBar isOpen={isSidebarOpen} />
+        <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+        <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/crepe" element={<CategoryPage category={1} />} />

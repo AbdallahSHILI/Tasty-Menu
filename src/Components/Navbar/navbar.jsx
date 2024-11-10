@@ -4,13 +4,13 @@ import PositionIcon from "../Assets/Position.svg";
 import IceCreamIcon from "../Assets/Navbar_Ice_Cream.svg";
 import MenuIcon from "../Assets/Menu.svg";
 
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.leftSection}>
         <img
           src={MenuIcon}
-          className={styles.menuIcon}
+          className={`${styles.menuIcon} ${isSidebarOpen ? styles.active : ""}`}
           alt="Menu"
           onClick={toggleSidebar}
         />

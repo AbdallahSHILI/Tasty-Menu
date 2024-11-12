@@ -7,6 +7,15 @@ import Jus from "../Components/Assets/Boissons.svg";
 import IceCream from "../Components/Assets/Ice_Cream.svg";
 import Malfouf from "../Components/Assets/Malfouf.svg";
 import Jwajem from "../Components/Assets/Jwajem.svg";
+import CrepeHeader from "../Components/Assets/Crepe_img.jpeg";
+import GaufreHeader from "../Components/Assets/Gauffre_img.jpg";
+import BubbleHeader from "../Components/Assets/Bubbles_img.jpeg";
+import WaffleHeader from "../Components/Assets/waaff.jpeg";
+import MalfoufHeader from "../Components/Assets/Crepe_img.jpeg";
+import IceCreamHeader from "../Components/Assets/Crepe_img.jpeg";
+import JusHeader from "../Components/Assets/Crepe_img.jpeg";
+import JwajemHeader from "../Components/Assets/Crepe_img.jpeg";
+import CafeHeader from "../Components/Assets/Crepe_img.jpeg";
 
 export const iconMap = {
   1: Crepe,
@@ -24,6 +33,7 @@ export const menuData = {
   1: {
     category: "Crêpe",
     icon: iconMap[1],
+    headerImage: CrepeHeader,
     subcategories: {
       sweet: {
         title: "Crêpe Sucrée",
@@ -130,6 +140,7 @@ export const menuData = {
   2: {
     category: "Gaufre",
     icon: iconMap[2],
+    headerImage: GaufreHeader,
     subcategories: {
       sweet: {
         title: "Gaufre Sucrée",
@@ -210,6 +221,7 @@ export const menuData = {
   3: {
     category: "Bubbles",
     icon: iconMap[3],
+    headerImage: BubbleHeader,
     items: [
       {
         id: "b1",
@@ -253,6 +265,7 @@ export const menuData = {
   4: {
     category: "Waffle",
     icon: iconMap[4],
+    headerImage: WaffleHeader,
     subcategories: {
       sweet: {
         title: "Waffle Sucrée",
@@ -318,6 +331,7 @@ export const menuData = {
   5: {
     category: "Malfouf",
     icon: iconMap[5],
+    headerImage: MalfoufHeader,
     items: [
       {
         id: "m1",
@@ -353,6 +367,7 @@ export const menuData = {
   6: {
     category: "Glaces Roulées",
     icon: iconMap[6],
+    headerImage: IceCreamHeader,
     items: [
       {
         id: "r1",
@@ -389,6 +404,7 @@ export const menuData = {
   7: {
     category: "Jus",
     icon: iconMap[7],
+    headerImage: JusHeader,
     subcategories: {
       juices: {
         title: "Jus Frais",
@@ -445,6 +461,7 @@ export const menuData = {
   8: {
     category: "Jwajem",
     icon: iconMap[8],
+    headerImage: JwajemHeader,
     subcategories: {
       chocolat: {
         title: "Jwajem Chocolat",
@@ -511,6 +528,7 @@ export const menuData = {
   9: {
     category: "Café",
     icon: iconMap[9],
+    headerImage: CafeHeader,
     items: [
       {
         id: "c1",

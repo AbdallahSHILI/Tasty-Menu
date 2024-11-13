@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import styles from "./sideBar.module.css";
 import { menuData } from "../../data/menuData";
 import HomeIcon from "../../Components/Assets/HomeIcon.svg";
+import SocialMedia from "./SocialMedia/socialMedia";
 
 const categoryRoutes = {
-  1: "/crepe",
-  2: "/gaufre",
-  3: "/bubble",
-  4: "/waffle",
-  5: "/boissons",
-  6: "/ice-cream",
-  7: "/malfouf",
-  8: "/cafe",
+  1: "/Crepe",
+  2: "/Gaufre",
+  3: "/Bubbles",
+  4: "/Waffle",
+  5: "/Malfouf",
+  6: "/Ice-Cream",
+  7: "/Jus",
+  8: "/Jwajem",
+  9: "/Café",
 };
 
 const SideBar = ({ isOpen, onClose }) => {
@@ -26,18 +28,23 @@ const SideBar = ({ isOpen, onClose }) => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [onClose]);
 
   return (
-    <div 
+    <div
       ref={sidebarRef}
       className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
     >
-      <Link to="/" className={`${styles.categoryItem} ${styles.homeItem}`} onClick={onClose}>
+      <SocialMedia />
+      <Link
+        to="/"
+        className={`${styles.categoryItem} ${styles.homeItem}`}
+        onClick={onClose}
+      >
         <div className={styles.homeName}>
           <img src={HomeIcon} alt="Home" className={styles.homeIcon} />
           <span className={styles.categoryText}>Accueil</span>

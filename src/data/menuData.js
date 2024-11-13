@@ -10,12 +10,12 @@ import Jwajem from "../Components/Assets/Jwajem.svg";
 import CrepeHeader from "../Components/Assets/Crepe_img.jpeg";
 import GaufreHeader from "../Components/Assets/Gauffre_img.jpg";
 import BubbleHeader from "../Components/Assets/Bubbles_img.jpeg";
-import WaffleHeader from "../Components/Assets/waaff.jpeg";
-import MalfoufHeader from "../Components/Assets/Crepe_img.jpeg";
-import IceCreamHeader from "../Components/Assets/Crepe_img.jpeg";
-import JusHeader from "../Components/Assets/Crepe_img.jpeg";
-import JwajemHeader from "../Components/Assets/Crepe_img.jpeg";
-import CafeHeader from "../Components/Assets/Crepe_img.jpeg";
+import WaffleHeader from "../Components/Assets/waffle.jpeg";
+import MalfoufHeader from "../Components/Assets/Malfouf.jpg";
+import IceCreamHeader from "../Components/Assets/Rolled_IceCream.jpeg";
+import JusHeader from "../Components/Assets/aa.jpeg";
+import JwajemHeader from "../Components/Assets/Jwajem.jpg";
+import CafeHeader from "../Components/Assets/Café.jpeg";
 
 export const iconMap = {
   1: Crepe,
@@ -36,7 +36,7 @@ export const menuData = {
     headerImage: CrepeHeader,
     subcategories: {
       sweet: {
-        title: "Crêpe Sucrée",
+        title: "Sucrée",
         items: [
           {
             id: "s1",
@@ -87,7 +87,7 @@ export const menuData = {
         ],
       },
       savory: {
-        title: "Crêpe Salée",
+        title: "Salée",
         items: [
           {
             id: "sv1",
@@ -143,7 +143,7 @@ export const menuData = {
     headerImage: GaufreHeader,
     subcategories: {
       sweet: {
-        title: "Gaufre Sucrée",
+        title: "Sucrée",
         items: [
           {
             id: "s1",
@@ -194,7 +194,7 @@ export const menuData = {
         ],
       },
       savory: {
-        title: "Gaufre Salée",
+        title: "Salée",
         items: [
           {
             id: "sv1",
@@ -268,7 +268,7 @@ export const menuData = {
     headerImage: WaffleHeader,
     subcategories: {
       sweet: {
-        title: "Waffle Sucrée",
+        title: "Sucrée",
         items: [
           {
             id: "ws1",
@@ -304,7 +304,7 @@ export const menuData = {
         ],
       },
       savory: {
-        title: "Waffle Salée",
+        title: "Salée",
         items: [
           {
             id: "wv1",
@@ -365,7 +365,7 @@ export const menuData = {
     ],
   },
   6: {
-    category: "Glaces Roulées",
+    category: "Ice_Cream",
     icon: iconMap[6],
     headerImage: IceCreamHeader,
     items: [
@@ -405,58 +405,48 @@ export const menuData = {
     category: "Jus",
     icon: iconMap[7],
     headerImage: JusHeader,
-    subcategories: {
-      juices: {
-        title: "Jus Frais",
-        items: [
-          {
-            id: "j1",
-            name: "Jus Citron",
-            price: "3.000",
-          },
-          {
-            id: "j2",
-            name: "Jus Orange",
-            price: "3.000",
-          },
-          {
-            id: "j3",
-            name: "Jus Fraise",
-            price: "6.500",
-          },
-          {
-            id: "j4",
-            name: "Jus Kiwi",
-            price: "6.500",
-          },
-          {
-            id: "j5",
-            name: "Jus Banane",
-            price: "6.500",
-          },
-          {
-            id: "j6",
-            name: "Cocktail",
-            price: "8.000",
-          },
-        ],
+    items: [
+      {
+        id: "j1",
+        name: "Jus Citron",
+        price: "3.000",
       },
-      other: {
-        title: "Boissons et Eaux",
-        items: [
-          {
-            id: "d1",
-            name: "Eau Minérale",
-            price: "1.000",
-          },
-          {
-            id: "d2",
-            name: "Boisson Gazeuse",
-            price: "3.000",
-          },
-        ],
+      {
+        id: "j2",
+        name: "Jus Orange",
+        price: "3.000",
       },
-    },
+      {
+        id: "j3",
+        name: "Jus Fraise",
+        price: "6.500",
+      },
+      {
+        id: "j4",
+        name: "Jus Kiwi",
+        price: "6.500",
+      },
+      {
+        id: "j5",
+        name: "Jus Banane",
+        price: "6.500",
+      },
+      {
+        id: "j6",
+        name: "Cocktail",
+        price: "8.000",
+      },
+      {
+        id: "d1",
+        name: "Eau Minérale",
+        price: "1.000",
+      },
+      {
+        id: "d2",
+        name: "Boisson Gazeuse",
+        price: "3.000",
+      },
+    ],
   },
   8: {
     category: "Jwajem",
@@ -464,7 +454,7 @@ export const menuData = {
     headerImage: JwajemHeader,
     subcategories: {
       chocolat: {
-        title: "Jwajem Chocolat",
+        title: "Chocolat",
         items: [
           {
             id: "jc1",
@@ -484,7 +474,7 @@ export const menuData = {
         ],
       },
       naturel: {
-        title: "Jwajem Naturel",
+        title: "Naturel",
         items: [
           {
             id: "jn1",
@@ -534,31 +524,26 @@ export const menuData = {
         id: "c1",
         name: "Express",
         price: "3.000",
-        ingredients: "Café express",
       },
       {
         id: "c2",
         name: "Café au lait",
-        price: "3.500",
-        ingredients: "Café / Lait chaud",
+        price: "4.000",
       },
       {
         id: "c3",
         name: "Capuccin",
         price: "3.500",
-        ingredients: "Café / Lait chaud / Mousse de lait",
       },
       {
         id: "c4",
         name: "Américain",
         price: "3.000",
-        ingredients: "Café allongé",
       },
       {
         id: "c5",
         name: "Capuccino",
         price: "5.000",
-        ingredients: "Café / Lait / Mousse de lait / Chantilly / Cacao",
       },
     ],
   },

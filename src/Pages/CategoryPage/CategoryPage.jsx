@@ -7,19 +7,34 @@ import GalerieIcon from "../../Components/Assets/Galerie.svg";
 import ReturnIcon from "../../Components/Assets/Return.svg";
 
 const CategoryPage = ({ category }) => {
-  const [activeFilter, setActiveFilter] = useState("sweet");
   const currentMenu = menuData[category];
   const navigate = useNavigate();
 
+  const defaultSubcategory = currentMenu?.subcategories
+    ? Object.keys(currentMenu.subcategories)[0]
+    : null;
+  const [activeSubcategory, setActiveSubcategory] =
+    useState(defaultSubcategory);
+  const [activeFilter, setActiveFilter] = useState(null);
+
   if (!currentMenu) return null;
 
-  const hasSweetSavory =
-    currentMenu.subcategories &&
-    currentMenu.subcategories.sweet &&
-    currentMenu.subcategories.savory;
+  const subcategoryKeys = currentMenu.subcategories
+    ? Object.keys(currentMenu.subcategories)
+    : [];
+  const hasSubcategories = subcategoryKeys.length > 0;
+
+  const currentSubcategory = hasSubcategories
+    ? currentMenu.subcategories[activeSubcategory || subcategoryKeys[0]]
+    : null;
 
   const handleReturn = () => {
-    navigate(-1); // Goes back to previous page
+    navigate(-1);
+  };
+
+  const handleSubcategoryChange = (subcategory) => {
+    setActiveSubcategory(subcategory);
+    setActiveFilter(null);
   };
 
   return (
@@ -43,57 +58,50 @@ const CategoryPage = ({ category }) => {
         </div>
       </div>
 
-      {hasSweetSavory && (
+      {hasSubcategories && (
         <div className={styles.filterContainer}>
           <div className={styles.toggleWrapper}>
-            <button
-              className={`${styles.toggleButton} ${
-                activeFilter === "sweet" ? styles.active : ""
-              }`}
-              onClick={() =>
-                setActiveFilter(activeFilter === "sweet" ? null : "sweet")
-              }
-            >
-              Sucré
-            </button>
-            <button
-              className={`${styles.toggleButton} ${
-                activeFilter === "savory" ? styles.active : ""
-              }`}
-              onClick={() =>
-                setActiveFilter(activeFilter === "savory" ? null : "savory")
-              }
-            >
-              Salé
-            </button>
+            {subcategoryKeys.map((key) => (
+              <button
+                key={key}
+                className={`${styles.toggleButton} ${
+                  activeSubcategory === key ? styles.active : ""
+                }`}
+                onClick={() => handleSubcategoryChange(key)}
+              >
+                {currentMenu.subcategories[key].title}
+              </button>
+            ))}
           </div>
         </div>
       )}
 
       <div className={styles.menuSection}>
         {currentMenu.subcategories ? (
-          Object.entries(currentMenu.subcategories)
-            .filter(([key]) => !activeFilter || key === activeFilter)
-            .map(([key, subcategory]) => (
-              <div key={key} className={styles.subcategoryContainer}>
-                <div className={styles.itemsGrid}>
-                  {subcategory.items.map((item) => (
-                    <div key={item.id} className={styles.menuItem}>
-                      <h3 className={styles.itemName}>{item.name}</h3>
-                      <p className={styles.price}>{item.price} DT</p>
+          currentSubcategory && (
+            <div className={styles.subcategoryContainer}>
+              <div className={styles.itemsGrid}>
+                {currentSubcategory.items.map((item) => (
+                  <div key={item.id} className={styles.menuItem}>
+                    <h3 className={styles.itemName}>{item.name}</h3>
+                    <p className={styles.price}>{item.price} DT</p>
+                    {item.ingredients && (
                       <p className={styles.ingredients}>{item.ingredients}</p>
-                    </div>
-                  ))}
-                </div>
+                    )}
+                  </div>
+                ))}
               </div>
-            ))
+            </div>
+          )
         ) : (
           <div className={styles.itemsGrid}>
             {currentMenu.items.map((item) => (
               <div key={item.id} className={styles.menuItem}>
                 <h3 className={styles.itemName}>{item.name}</h3>
                 <p className={styles.price}>{item.price} DT</p>
-                <p className={styles.ingredients}>{item.ingredients}</p>
+                {item.ingredients && (
+                  <p className={styles.ingredients}>{item.ingredients}</p>
+                )}
               </div>
             ))}
           </div>

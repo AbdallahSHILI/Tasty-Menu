@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./menu.module.css";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
-import GalerieIcon from "../../../../Components/Assets/Galerie.svg"; // Adjust the path as needed
+import GalerieIcon from "../../../../Components/Assets/Galerie.svg";
 
 const Menu = () => {
   const { selectedCategory } = useMenu();
   const currentMenu = menuData[selectedCategory];
-  const [selectedSubcategory, setSelectedSubcategory] = useState(
-    currentMenu?.subcategories
-      ? Object.keys(currentMenu.subcategories)[0]
-      : null
-  );
+
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+
+  useEffect(() => {
+    if (currentMenu?.subcategories) {
+      const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
+      setSelectedSubcategory(firstSubcategory);
+    }
+  }, [selectedCategory, currentMenu]);
 
   if (!currentMenu) return null;
 
@@ -29,6 +33,9 @@ const Menu = () => {
     ));
   };
 
+  const currentSubcategoryItems =
+    currentMenu.subcategories?.[selectedSubcategory]?.items;
+
   return (
     <div className={styles.menuContainer}>
       <div className={styles.headerContainer}>
@@ -37,36 +44,30 @@ const Menu = () => {
       </div>
 
       {currentMenu.subcategories && (
-        <div className={styles.subcategorySelector}>
-          {Object.entries(currentMenu.subcategories).map(
-            ([key, subcategory]) => (
-              <label key={key} className={styles.radioLabel}>
-                <input
-                  type="radio"
-                  name="subcategory"
-                  value={key}
-                  checked={selectedSubcategory === key}
-                  onChange={(e) => setSelectedSubcategory(e.target.value)}
-                  className={styles.radioInput}
-                />
-                <span className={styles.radioText}>{subcategory.title}</span>
-              </label>
-            )
-          )}
+        <div className={styles.filterContainer}>
+          <div className={styles.toggleWrapper}>
+            {Object.entries(currentMenu.subcategories).map(
+              ([key, subcategory]) => (
+                <button
+                  key={key}
+                  className={`${styles.toggleButton} ${
+                    selectedSubcategory === key ? styles.active : ""
+                  }`}
+                  onClick={() => setSelectedSubcategory(key)}
+                >
+                  {subcategory.title}
+                </button>
+              )
+            )}
+          </div>
         </div>
       )}
 
-      {currentMenu.subcategories ? (
-        <div className={styles.menuItems}>
-          {renderMenuItems(
-            currentMenu.subcategories[selectedSubcategory].items
-          )}
-        </div>
-      ) : (
-        <div className={styles.menuItems}>
-          {renderMenuItems(currentMenu.items)}
-        </div>
-      )}
+      <div className={styles.menuItems}>
+        {currentMenu.subcategories
+          ? currentSubcategoryItems && renderMenuItems(currentSubcategoryItems)
+          : renderMenuItems(currentMenu.items)}
+      </div>
     </div>
   );
 };

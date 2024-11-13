@@ -24,14 +24,15 @@ function App() {
         <SideBar isOpen={isSidebarOpen} onClose={closeSidebar} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/crepe" element={<CategoryPage category={1} />} />
-          <Route path="/gaufre" element={<CategoryPage category={2} />} />
-          <Route path="/bubble" element={<CategoryPage category={3} />} />
-          <Route path="/waffle" element={<CategoryPage category={4} />} />
-          <Route path="/boissons" element={<CategoryPage category={5} />} />
-          <Route path="/ice-cream" element={<CategoryPage category={6} />} />
-          <Route path="/malfouf" element={<CategoryPage category={7} />} />
-          <Route path="/cafe" element={<CategoryPage category={8} />} />
+          <Route path="/Crepe" element={<CategoryPage category={1} />} />
+          <Route path="/Gaufre" element={<CategoryPage category={2} />} />
+          <Route path="/Bubbles" element={<CategoryPage category={3} />} />
+          <Route path="/Waffle" element={<CategoryPage category={4} />} />
+          <Route path="/Malfouf" element={<CategoryPage category={5} />} />
+          <Route path="/Ice-Cream" element={<CategoryPage category={6} />} />
+          <Route path="/Jus" element={<CategoryPage category={7} />} />
+          <Route path="/Jwajem" element={<CategoryPage category={8} />} />
+          <Route path="/Café" element={<CategoryPage category={9} />} />
         </Routes>
       </Router>
     </MenuProvider>

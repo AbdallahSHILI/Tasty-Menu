@@ -256,3 +256,32 @@
 .toggleButton:hover {
   opacity: 0.9;
 }
+
+@media screen and (max-width: 768px) {
+  .toggleWrapper {
+    width: 65%; /* Increase width on smaller screens */
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    gap: 8px; /* Adjust gap for better spacing */
+    padding: 8px;
+  }
+
+  .toggleButton {
+    padding: 8px 12px; /* Reduce padding */
+    font-size: 0.9rem; /* Slightly smaller font */
+    flex: 1; /* Allow buttons to grow */
+    min-width: 80px; /* Ensure minimum width */
+    white-space: nowrap; /* Prevent text wrapping inside buttons */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .toggleWrapper {
+    width: 75%;
+    padding: 6px;
+  }
+
+  .toggleButton {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

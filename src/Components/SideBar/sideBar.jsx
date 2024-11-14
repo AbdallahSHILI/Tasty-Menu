@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./sideBar.module.css";
 import { menuData } from "../../data/menuData";
 import HomeIcon from "../../Components/Assets/HomeIcon.svg";
-import SocialMedia from "./SocialMedia/socialMedia";
+import SideBarFooter from "./SideBarFooter/sideBarFooter";
 
 const categoryRoutes = {
   1: "/Crepe",
@@ -34,12 +34,23 @@ const SideBar = ({ isOpen, onClose }) => {
     };
   }, [onClose]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("sidebar-open");
+    } else {
+      document.body.classList.remove("sidebar-open");
+    }
+
+    return () => {
+      document.body.classList.remove("sidebar-open");
+    };
+  }, [isOpen]);
+
   return (
     <div
       ref={sidebarRef}
       className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
     >
-      <SocialMedia />
       <Link
         to="/"
         className={`${styles.categoryItem} ${styles.homeItem}`}
@@ -67,6 +78,8 @@ const SideBar = ({ isOpen, onClose }) => {
           </div>
         </Link>
       ))}
+      <br />
+      <SideBarFooter />
     </div>
   );
 };

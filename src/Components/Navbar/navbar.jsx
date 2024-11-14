@@ -3,6 +3,7 @@ import styles from "./navbar.module.css";
 import PositionIcon from "../Assets/Position.svg";
 import IceCreamIcon from "../Assets/Navbar_Ice_Cream.svg";
 import MenuIcon from "../Assets/Menu.svg";
+import SocialMedia from "./SocialMedia/socialMedia";
 
 const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
@@ -14,18 +15,10 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
           alt="Menu"
           onClick={toggleSidebar}
         />
-        <img
-          src={PositionIcon}
-          className={styles.positionIcon}
-          alt="PositionIcon"
-        />
         <div className={styles.logo}>Tasty, Cite Ezzouhour</div>
       </div>
-      <img
-        src={IceCreamIcon}
-        className={styles.iceCreamIcon}
-        alt="IceCreamIcon"
-      />
+
+      <SocialMedia />
     </nav>
   );
 };

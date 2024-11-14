@@ -1,0 +1,41 @@
+.footerContainer {
+  position: absolute;
+  bottom: -140px;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.footerText {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: scale(1.1);
+}
+
+.socialIcon {
+  width: 20px;
+  height: 20px;
+}

@@ -7,7 +7,7 @@ const SocialMedia = () => {
   return (
     <div className={styles.socialMediaContainer}>
       <a
-        href="https://www.instagram.com/yourhandle"
+        href="https://www.instagram.com/tasty_rolled_ice_cream/"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.socialLink}
@@ -19,7 +19,7 @@ const SocialMedia = () => {
         />
       </a>
       <a
-        href="https://www.facebook.com/yourpage"
+        href="https://www.facebook.com/TastyGabes"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.socialLink}

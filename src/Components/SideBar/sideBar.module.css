@@ -3,12 +3,34 @@
   top: 60px;
   left: -250px;
   width: 250px;
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: left 0.3s ease;
   z-index: 999;
-  padding: 20px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* For Webkit browsers like Chrome/Safari */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Add this to prevent body scroll when sidebar is open */
+.sidebar.open + body {
+  overflow: hidden;
 }
 
 .sidebar.open {

@@ -1,8 +1,6 @@
 .socialMediaContainer {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -13,17 +11,16 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .socialLink:hover {
-  background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
 }
 
 .socialIcon {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0) invert(1); /* Makes the icon white */
+  width: 24px;
+  height: 24px;
 }
+
+/* Specific styles for each platform */

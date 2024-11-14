@@ -45,10 +45,6 @@
 
 /* For mobile devices */
 @media screen and (max-width: 768px) {
-  .navbar {
-    padding: 0.8rem 1rem;
-  }
-
   .logo {
     font-size: 1.2rem;
   }

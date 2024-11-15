@@ -16,6 +16,12 @@ import IceCreamHeader from "../Components/Assets/Rolled_IceCream.jpeg";
 import JusHeader from "../Components/Assets/aa.jpeg";
 import JwajemHeader from "../Components/Assets/Jwajem.jpg";
 import CafeHeader from "../Components/Assets/Café.jpeg";
+import Pancake from "../Components/Assets/Pancake.svg";
+import PancakeHeader from "../Components/Assets/pancake_img.jpeg";
+import Milkshake from "../Components/Assets/Milkshake.svg";
+import MilkshakeHeader from "../Components/Assets/Milkshake_img.jpeg";
+import MojitoHeader from "../Components/Assets/Mojito.jpeg";
+import Mojito from "../Components/Assets/Mojito.svg";
 
 export const iconMap = {
   1: Crepe,
@@ -27,6 +33,9 @@ export const iconMap = {
   7: Jus,
   8: Jwajem,
   9: Café,
+  10: Pancake,
+  11: Milkshake,
+  12: Mojito,
 };
 
 export const menuData = {
@@ -544,6 +553,127 @@ export const menuData = {
         id: "c5",
         name: "Capuccino",
         price: "5.000",
+      },
+    ],
+  },
+  10: {
+    category: "Pancake",
+    icon: iconMap[10],
+    headerImage: PancakeHeader,
+    subcategories: {
+      sweet: {
+        title: "Sucrée",
+        items: [
+          {
+            id: "s1",
+            name: "Chocolat",
+            price: "7.000",
+          },
+          {
+            id: "s2",
+            name: "Fruits Secs",
+            price: "9.000",
+          },
+          {
+            id: "s3",
+            name: "Banane",
+            price: "9.000",
+          },
+          {
+            id: "s4",
+            name: "Oreo",
+            price: "9.000",
+          },
+          {
+            id: "s5",
+            name: "Speculoos",
+            price: "9.000",
+          },
+          {
+            id: "s7",
+            name: "Ferrero",
+            price: "10.000",
+          },
+          {
+            id: "s8",
+            name: "Snickers",
+            price: "10.000",
+          },
+          {
+            id: "s6",
+            name: "Tasty",
+            price: "12.000",
+          },
+          {
+            id: "s9",
+            name: "Pistache",
+            price: "12.000",
+          },
+        ],
+      },
+    },
+  },
+  11: {
+    category: "Milkshake",
+    icon: iconMap[11],
+    headerImage: MilkshakeHeader,
+    items: [
+      {
+        id: "m1",
+        name: "Chocolat",
+        price: "7.000",
+      },
+      {
+        id: "m2",
+        name: "Fraise",
+        price: "7.000",
+      },
+      {
+        id: "m3",
+        name: "Vanille",
+        price: "7.000",
+      },
+      {
+        id: "m4",
+        name: "Speculoos",
+        price: "8.000",
+      },
+      {
+        id: "m5",
+        name: "Oreo",
+        price: "8.000",
+      },
+      {
+        id: "m6",
+        name: "Nutella",
+        price: "8.000",
+      },
+      {
+        id: "m7",
+        name: "Snickers",
+        price: "10.000",
+      },
+    ],
+  },
+  12: {
+    category: "Mojito",
+    icon: iconMap[12],
+    headerImage: MojitoHeader,
+    items: [
+      {
+        id: "m1",
+        name: "Bleu",
+        price: "7.500",
+      },
+      {
+        id: "m2",
+        name: "Framboise",
+        price: "7.500",
+      },
+      {
+        id: "m3",
+        name: "Virgin",
+        price: "7.500",
       },
     ],
   },

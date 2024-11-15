@@ -33,6 +33,9 @@ function App() {
           <Route path="/Jus" element={<CategoryPage category={7} />} />
           <Route path="/Jwajem" element={<CategoryPage category={8} />} />
           <Route path="/Café" element={<CategoryPage category={9} />} />
+          <Route path="/Pancake" element={<CategoryPage category={10} />} />
+          <Route path="/Milkshake" element={<CategoryPage category={11} />} />
+          <Route path="/Mojito" element={<CategoryPage category={12} />} />
         </Routes>
       </Router>
     </MenuProvider>

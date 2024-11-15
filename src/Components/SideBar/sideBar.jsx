@@ -15,6 +15,9 @@ const categoryRoutes = {
   7: "/Jus",
   8: "/Jwajem",
   9: "/Café",
+  10: "/Pancake",
+  11: "/Milkshake",
+  12: "/Mojito",
 };
 
 const SideBar = ({ isOpen, onClose }) => {
@@ -78,8 +81,9 @@ const SideBar = ({ isOpen, onClose }) => {
           </div>
         </Link>
       ))}
-      <br />
-      <SideBarFooter />
+      <div className={styles.footerContainer}>
+        <SideBarFooter />
+      </div>
     </div>
   );
 };

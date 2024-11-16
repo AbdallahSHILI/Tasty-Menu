@@ -43,6 +43,7 @@ export const menuData = {
     category: "Crêpe",
     icon: iconMap[1],
     headerImage: CrepeHeader,
+    ModalImages: [CrepeHeader, CrepeHeader, CrepeHeader],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -150,6 +151,11 @@ export const menuData = {
     category: "Gaufre",
     icon: iconMap[2],
     headerImage: GaufreHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -231,6 +237,11 @@ export const menuData = {
     category: "Bubbles",
     icon: iconMap[3],
     headerImage: BubbleHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "b1",
@@ -275,6 +286,11 @@ export const menuData = {
     category: "Waffle",
     icon: iconMap[4],
     headerImage: WaffleHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -341,6 +357,11 @@ export const menuData = {
     category: "Malfouf",
     icon: iconMap[5],
     headerImage: MalfoufHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "m1",
@@ -377,6 +398,11 @@ export const menuData = {
     category: "Ice_Cream",
     icon: iconMap[6],
     headerImage: IceCreamHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "r1",
@@ -414,6 +440,11 @@ export const menuData = {
     category: "Jus",
     icon: iconMap[7],
     headerImage: JusHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "j1",
@@ -461,6 +492,11 @@ export const menuData = {
     category: "Jwajem",
     icon: iconMap[8],
     headerImage: JwajemHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     subcategories: {
       chocolat: {
         title: "Chocolat",
@@ -528,6 +564,11 @@ export const menuData = {
     category: "Café",
     icon: iconMap[9],
     headerImage: CafeHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "c1",
@@ -560,6 +601,11 @@ export const menuData = {
     category: "Pancake",
     icon: iconMap[10],
     headerImage: PancakeHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -617,6 +663,11 @@ export const menuData = {
     category: "Milkshake",
     icon: iconMap[11],
     headerImage: MilkshakeHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "m1",
@@ -659,6 +710,11 @@ export const menuData = {
     category: "Mojito",
     icon: iconMap[12],
     headerImage: MojitoHeader,
+    ModalImages: [
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+      "../Components/Assets/Gauffre_img.jpg",
+    ],
     items: [
       {
         id: "m1",

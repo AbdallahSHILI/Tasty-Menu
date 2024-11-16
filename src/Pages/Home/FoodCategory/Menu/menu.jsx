@@ -3,12 +3,14 @@ import styles from "./menu.module.css";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
 import GalerieIcon from "../../../../Components/Assets/Galerie.svg";
+import FoodPic from "../../../../Components/Modal/foodPic";
 
 const Menu = () => {
   const { selectedCategory } = useMenu();
   const currentMenu = menuData[selectedCategory];
 
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (currentMenu?.subcategories) {
@@ -36,11 +38,20 @@ const Menu = () => {
   const currentSubcategoryItems =
     currentMenu.subcategories?.[selectedSubcategory]?.items;
 
+  const handleGalleryClick = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <div className={styles.menuContainer}>
       <div className={styles.headerContainer}>
         <h2 className={styles.categoryTitle}>{currentMenu.category}</h2>
-        <img src={GalerieIcon} alt="Galerie" className={styles.galerieIcon} />
+        <img
+          src={GalerieIcon}
+          alt="Galerie"
+          className={styles.galerieIcon}
+          onClick={handleGalleryClick}
+        />
       </div>
 
       {currentMenu.subcategories && (
@@ -68,6 +79,12 @@ const Menu = () => {
           ? currentSubcategoryItems && renderMenuItems(currentSubcategoryItems)
           : renderMenuItems(currentMenu.items)}
       </div>
+
+      <FoodPic
+        images={currentMenu.ModalImages}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

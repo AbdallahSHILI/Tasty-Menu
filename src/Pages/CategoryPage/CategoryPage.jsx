@@ -5,10 +5,14 @@ import { menuData } from "../../data/menuData";
 import { useNavigate } from "react-router-dom";
 import GalerieIcon from "../../Components/Assets/Galerie.svg";
 import ReturnIcon from "../../Components/Assets/Return.svg";
+import FoodPic from "../../Components/Modal/foodPic"; // Import the FoodPic component
 
 const CategoryPage = ({ category }) => {
   const currentMenu = menuData[category];
   const navigate = useNavigate();
+
+  // Add state for modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const defaultSubcategory = currentMenu?.subcategories
     ? Object.keys(currentMenu.subcategories)[0]
@@ -30,6 +34,11 @@ const CategoryPage = ({ category }) => {
 
   const handleReturn = () => {
     navigate(-1);
+  };
+
+  // Add handler for gallery icon click
+  const handleGalleryClick = () => {
+    setIsModalOpen(true);
   };
 
   const handleSubcategoryChange = (subcategory) => {
@@ -54,7 +63,12 @@ const CategoryPage = ({ category }) => {
             onClick={handleReturn}
           />
           <h1 className={styles.categoryTitle}>{currentMenu.category}</h1>
-          <img src={GalerieIcon} alt="Galerie" className={styles.galerieIcon} />
+          <img
+            src={GalerieIcon}
+            alt="Galerie"
+            className={styles.galerieIcon}
+            onClick={handleGalleryClick} // Add click handler
+          />
         </div>
       </div>
 
@@ -107,6 +121,13 @@ const CategoryPage = ({ category }) => {
           </div>
         )}
       </div>
+
+      {/* Add FoodPic modal component */}
+      <FoodPic
+        images={currentMenu.ModalImages}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

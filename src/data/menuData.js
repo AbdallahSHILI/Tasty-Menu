@@ -606,58 +606,53 @@ export const menuData = {
       "../Components/Assets/Gauffre_img.jpg",
       "../Components/Assets/Gauffre_img.jpg",
     ],
-    subcategories: {
-      sweet: {
-        title: "Sucrée",
-        items: [
-          {
-            id: "s1",
-            name: "Chocolat",
-            price: "7.000",
-          },
-          {
-            id: "s2",
-            name: "Fruits Secs",
-            price: "9.000",
-          },
-          {
-            id: "s3",
-            name: "Banane",
-            price: "9.000",
-          },
-          {
-            id: "s4",
-            name: "Oreo",
-            price: "9.000",
-          },
-          {
-            id: "s5",
-            name: "Speculoos",
-            price: "9.000",
-          },
-          {
-            id: "s7",
-            name: "Ferrero",
-            price: "10.000",
-          },
-          {
-            id: "s8",
-            name: "Snickers",
-            price: "10.000",
-          },
-          {
-            id: "s6",
-            name: "Tasty",
-            price: "12.000",
-          },
-          {
-            id: "s9",
-            name: "Pistache",
-            price: "12.000",
-          },
-        ],
+    items: [
+      {
+        id: "s1",
+        name: "Chocolat",
+        price: "7.000",
       },
-    },
+      {
+        id: "s2",
+        name: "Fruits Secs",
+        price: "9.000",
+      },
+      {
+        id: "s3",
+        name: "Banane",
+        price: "9.000",
+      },
+      {
+        id: "s4",
+        name: "Oreo",
+        price: "9.000",
+      },
+      {
+        id: "s5",
+        name: "Speculoos",
+        price: "9.000",
+      },
+      {
+        id: "s7",
+        name: "Ferrero",
+        price: "10.000",
+      },
+      {
+        id: "s8",
+        name: "Snickers",
+        price: "10.000",
+      },
+      {
+        id: "s6",
+        name: "Tasty",
+        price: "12.000",
+      },
+      {
+        id: "s9",
+        name: "Pistache",
+        price: "12.000",
+      },
+    ],
   },
   11: {
     category: "Milkshake",

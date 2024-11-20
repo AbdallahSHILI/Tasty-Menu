@@ -34,11 +34,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 50px; /* Ensure enough clickable width */
-  height: 50px; /* Ensure enough clickable height */
-  padding: 0; /* Remove padding to make the clickable area larger */
-  background: none;
-  border: none;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -48,15 +45,15 @@
 }
 
 .closeButtonWrapper:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Add a hover effect for better UX */
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .closeButton {
-  width: 20px; /* Slightly smaller icon size */
+  width: 20px;
   height: 20px;
-  pointer-events: none; /* Ensures the button wrapper receives the click */
 }
 
+/* Rest of the styles remain the same as in the previous example */
 .navigationButtons {
   display: flex;
   align-items: center;

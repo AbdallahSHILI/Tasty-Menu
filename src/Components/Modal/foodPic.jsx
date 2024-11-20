@@ -23,7 +23,7 @@ const FoodPic = ({ images, isOpen, onClose }) => {
   };
 
   const handleImageClick = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Important to prevent closing when clicking on the image
     onClose();
   };
 
@@ -31,7 +31,7 @@ const FoodPic = ({ images, isOpen, onClose }) => {
     <div className={style.modalOverlay} onClick={onClose}>
       <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
         {/* Close icon button */}
-        <button
+        <div
           className={style.closeButtonWrapper}
           onClick={(e) => {
             e.stopPropagation();
@@ -39,7 +39,7 @@ const FoodPic = ({ images, isOpen, onClose }) => {
           }}
         >
           <img src={Close} alt="Close" className={style.closeButton} />
-        </button>
+        </div>
 
         <div className={style.navigationButtons}>
           <img
@@ -48,12 +48,11 @@ const FoodPic = ({ images, isOpen, onClose }) => {
             className={`${style.arrowButton} ${style.leftArrow}`}
             onClick={handlePrevClick}
           />
-          {/* Make image clickable to close modal */}
           <img
             src={images[currentIndex]}
             alt={`Food ${currentIndex + 1}`}
             className={style.image}
-            onClick={handleImageClick} // Click to close the modal
+            onClick={handleImageClick}
           />
           <img
             src={flech}

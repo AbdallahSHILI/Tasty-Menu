@@ -23,6 +23,61 @@ import MilkshakeHeader from "../Components/Assets/Milkshake_img.jpeg";
 import MojitoHeader from "../Components/Assets/Mojito.jpeg";
 import Mojito from "../Components/Assets/Mojito.svg";
 
+// Import additional images for Modal
+import CrepeImage1 from "../Components/Assets/Crepe_img_1.jpeg";
+import CrepeImage2 from "../Components/Assets/Crepe_img_2.jpg";
+import CrepeImage3 from "../Components/Assets/Crepe_img_3.jpg";
+
+import GaufreImage1 from "../Components/Assets/Gauffre_img_1.jpg";
+import GaufreImage2 from "../Components/Assets/Gauffre_img_2.jpeg";
+import GaufreImage3 from "../Components/Assets/Gauffre_img_3.jpg";
+
+import BubbleImage1 from "../Components/Assets/Gauffre_img_1.jpg";
+import BubbleImage2 from "../Components/Assets/Gauffre_img_2.jpeg";
+import BubbleImage3 from "../Components/Assets/Gauffre_img_3.jpg";
+
+import WaffleImage1 from "../Components/Assets/Waffle_Sucré_img_1.jpeg";
+import WaffleImage2 from "../Components/Assets/Waffle_Sucré_img_2.jpeg";
+import WaffleImage3 from "../Components/Assets/Waffle_Sucré_img_3.jpeg";
+import WaffleImage4 from "../Components/Assets/Waffle_salé_img_1.jpg";
+import WaffleImage5 from "../Components/Assets/Waffle_salé_img_2.jpeg";
+import WaffleImage6 from "../Components/Assets/Waffle_salé_img_3.jpeg";
+
+import MalfoufImage1 from "../Components/Assets/Malfouf_img_1.jpeg";
+import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.jpeg";
+import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.jpg";
+
+import IceCreamImage1 from "../Components/Assets/IceCream_img_1.jpg";
+import IceCreamImage2 from "../Components/Assets/IceCream_img_2.webp";
+import IceCreamImage3 from "../Components/Assets/IceCream_img_3.jpeg";
+import IceCreamImage4 from "../Components/Assets/IceCream_yagh_img_1.jpeg";
+import IceCreamImage5 from "../Components/Assets/IceCream_yagh_img_2.jpeg";
+import IceCreamImage6 from "../Components/Assets/IceCream_yagh_img_3.jpeg";
+
+import JusImage1 from "../Components/Assets/Jus_img_1.jpeg";
+import JusImage2 from "../Components/Assets/Jus_img_2.jpeg";
+import JusImage3 from "../Components/Assets/Jus_img_3.jpeg";
+
+import JwajemImage1 from "../Components/Assets/Jus_img_1.jpeg";
+import JwajemImage2 from "../Components/Assets/Jus_img_1.jpeg";
+import JwajemImage3 from "../Components/Assets/Jus_img_1.jpeg";
+
+import CafeImage1 from "../Components/Assets/Café_img_1.jpeg";
+import CafeImage2 from "../Components/Assets/Café_img_2.jpg";
+import CafeImage3 from "../Components/Assets/Café_img_3.jpeg";
+
+import PancakeImage1 from "../Components/Assets/Pancake_img_1.jpeg";
+import PancakeImage2 from "../Components/Assets/Pancake_img_2.jpeg";
+import PancakeImage3 from "../Components/Assets/Pancake_img_3.jpeg";
+
+import MilkshakeImage1 from "../Components/Assets/Milkshake_img_1.jpeg";
+import MilkshakeImage2 from "../Components/Assets/Milkshake_img_2.jpeg";
+import MilkshakeImage3 from "../Components/Assets/Milkshake_img_2.jpeg";
+
+import MojitoImage1 from "../Components/Assets/Mojito_img_1.jpg";
+import MojitoImage2 from "../Components/Assets/Mojito_img_2.jpeg";
+import MojitoImage3 from "../Components/Assets/Mojito_img_2.jpeg";
+
 export const iconMap = {
   1: Crepe,
   2: Gaufre,
@@ -43,7 +98,7 @@ export const menuData = {
     category: "Crêpe",
     icon: iconMap[1],
     headerImage: CrepeHeader,
-    ModalImages: [CrepeHeader, CrepeHeader, CrepeHeader],
+    ModalImages: [CrepeImage1, CrepeImage2, CrepeImage3],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -151,11 +206,7 @@ export const menuData = {
     category: "Gaufre",
     icon: iconMap[2],
     headerImage: GaufreHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [GaufreImage1, GaufreImage2, GaufreImage3],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -237,11 +288,7 @@ export const menuData = {
     category: "Bubbles",
     icon: iconMap[3],
     headerImage: BubbleHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [BubbleImage1, BubbleImage2, BubbleImage3],
     items: [
       {
         id: "b1",
@@ -287,9 +334,12 @@ export const menuData = {
     icon: iconMap[4],
     headerImage: WaffleHeader,
     ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
+      WaffleImage1,
+      WaffleImage2,
+      WaffleImage3,
+      WaffleImage4,
+      WaffleImage5,
+      WaffleImage6,
     ],
     subcategories: {
       sweet: {
@@ -357,11 +407,7 @@ export const menuData = {
     category: "Malfouf",
     icon: iconMap[5],
     headerImage: MalfoufHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [MalfoufImage1, MalfoufImage2, MalfoufImage3],
     items: [
       {
         id: "m1",
@@ -399,9 +445,12 @@ export const menuData = {
     icon: iconMap[6],
     headerImage: IceCreamHeader,
     ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
+      IceCreamImage1,
+      IceCreamImage2,
+      IceCreamImage3,
+      IceCreamImage4,
+      IceCreamImage5,
+      IceCreamImage6,
     ],
     items: [
       {
@@ -440,11 +489,7 @@ export const menuData = {
     category: "Jus",
     icon: iconMap[7],
     headerImage: JusHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [JusImage1, JusImage2, JusImage3],
     items: [
       {
         id: "j1",
@@ -492,11 +537,7 @@ export const menuData = {
     category: "Jwajem",
     icon: iconMap[8],
     headerImage: JwajemHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [JwajemImage1, JwajemImage2, JwajemImage3],
     subcategories: {
       chocolat: {
         title: "Chocolat",
@@ -564,11 +605,7 @@ export const menuData = {
     category: "Café",
     icon: iconMap[9],
     headerImage: CafeHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [CafeImage1, CafeImage2, CafeImage3],
     items: [
       {
         id: "c1",
@@ -601,11 +638,7 @@ export const menuData = {
     category: "Pancake",
     icon: iconMap[10],
     headerImage: PancakeHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [PancakeImage1, PancakeImage2, PancakeImage3],
     items: [
       {
         id: "s1",
@@ -658,11 +691,7 @@ export const menuData = {
     category: "Milkshake",
     icon: iconMap[11],
     headerImage: MilkshakeHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [MilkshakeImage1, MilkshakeImage2, MilkshakeImage3],
     items: [
       {
         id: "m1",
@@ -705,11 +734,7 @@ export const menuData = {
     category: "Mojito",
     icon: iconMap[12],
     headerImage: MojitoHeader,
-    ModalImages: [
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-      "../Components/Assets/Gauffre_img.jpg",
-    ],
+    ModalImages: [MojitoImage1, MojitoImage2, MojitoImage3],
     items: [
       {
         id: "m1",

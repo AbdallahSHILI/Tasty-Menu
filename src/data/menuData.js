@@ -48,7 +48,7 @@ import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.jpeg";
 import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.jpg";
 
 import IceCreamImage1 from "../Components/Assets/IceCream_img_1.jpg";
-import IceCreamImage2 from "../Components/Assets/IceCream_img_2.webp";
+import IceCreamImage2 from "../Components/Assets/IceCream_img_2.jpg";
 import IceCreamImage3 from "../Components/Assets/IceCream_img_3.jpeg";
 import IceCreamImage4 from "../Components/Assets/IceCream_yagh_img_1.jpeg";
 import IceCreamImage5 from "../Components/Assets/IceCream_yagh_img_2.jpeg";
@@ -72,11 +72,11 @@ import PancakeImage3 from "../Components/Assets/Pancake_img_3.jpeg";
 
 import MilkshakeImage1 from "../Components/Assets/Milkshake_img_1.jpeg";
 import MilkshakeImage2 from "../Components/Assets/Milkshake_img_2.jpeg";
-import MilkshakeImage3 from "../Components/Assets/Milkshake_img_2.jpeg";
+import MilkshakeImage3 from "../Components/Assets/Milkshake_img_3.jpeg";
 
 import MojitoImage1 from "../Components/Assets/Mojito_img_1.jpg";
 import MojitoImage2 from "../Components/Assets/Mojito_img_2.jpeg";
-import MojitoImage3 from "../Components/Assets/Mojito_img_2.jpeg";
+import MojitoImage3 from "../Components/Assets/Mojito_img_3.jpeg";
 
 export const iconMap = {
   1: Crepe,

@@ -7,76 +7,76 @@ import Jus from "../Components/Assets/Boissons.svg";
 import IceCream from "../Components/Assets/Ice_Cream.svg";
 import Malfouf from "../Components/Assets/Malfouf.svg";
 import Jwajem from "../Components/Assets/Jwajem.svg";
-import CrepeHeader from "../Components/Assets/Crepe_img.jpeg";
-import GaufreHeader from "../Components/Assets/Gauffre_img.jpg";
-import BubbleHeader from "../Components/Assets/Bubbles_img.jpeg";
-import WaffleHeader from "../Components/Assets/waffle.jpeg";
-import MalfoufHeader from "../Components/Assets/Malfouf.jpg";
-import IceCreamHeader from "../Components/Assets/Rolled_IceCream.jpeg";
-import JusHeader from "../Components/Assets/aa.jpeg";
-import JwajemHeader from "../Components/Assets/Jwajem.jpg";
-import CafeHeader from "../Components/Assets/Café.jpeg";
+import CrepeHeader from "../Components/Assets/Crepe_img.webp";
+import GaufreHeader from "../Components/Assets/Gauffre_img.webp";
+import BubbleHeader from "../Components/Assets/Bubbles_img.webp";
+import WaffleHeader from "../Components/Assets/waffle.webp";
+import MalfoufHeader from "../Components/Assets/Malfouf.webp";
+import IceCreamHeader from "../Components/Assets/Rolled_IceCream.webp";
+import JusHeader from "../Components/Assets/aa.webp";
+import JwajemHeader from "../Components/Assets/Jwajem.webp";
+import CafeHeader from "../Components/Assets/Café.webp";
 import Pancake from "../Components/Assets/Pancake.svg";
-import PancakeHeader from "../Components/Assets/pancake_img.jpeg";
+import PancakeHeader from "../Components/Assets/pancake_img.webp";
 import Milkshake from "../Components/Assets/Milkshake.svg";
-import MilkshakeHeader from "../Components/Assets/Milkshake_img.jpeg";
-import MojitoHeader from "../Components/Assets/Mojito.jpeg";
+import MilkshakeHeader from "../Components/Assets/Milkshake_img.webp";
+import MojitoHeader from "../Components/Assets/Mojito.webp";
 import Mojito from "../Components/Assets/Mojito.svg";
 
 // Import additional images for Modal
-import CrepeImage1 from "../Components/Assets/Crepe_img_1.jpeg";
-import CrepeImage2 from "../Components/Assets/Crepe_img_2.jpg";
-import CrepeImage3 from "../Components/Assets/Crepe_img_3.jpg";
+import CrepeImage1 from "../Components/Assets/Crepe_img_1.webp";
+import CrepeImage2 from "../Components/Assets/Crepe_img_2.webp";
+import CrepeImage3 from "../Components/Assets/Crepe_img_3.webp";
 
-import GaufreImage1 from "../Components/Assets/Gauffre_img_1.jpg";
-import GaufreImage2 from "../Components/Assets/Gauffre_img_2.jpeg";
-import GaufreImage3 from "../Components/Assets/Gauffre_img_3.jpg";
+import GaufreImage1 from "../Components/Assets/Gauffre_img_1.webp";
+import GaufreImage2 from "../Components/Assets/Gauffre_img_2.webp";
+import GaufreImage3 from "../Components/Assets/Gauffre_img_3.webp";
 
-import BubbleImage1 from "../Components/Assets/Gauffre_img_1.jpg";
-import BubbleImage2 from "../Components/Assets/Gauffre_img_2.jpeg";
-import BubbleImage3 from "../Components/Assets/Gauffre_img_3.jpg";
+import BubbleImage1 from "../Components/Assets/Gauffre_img_1.webp";
+import BubbleImage2 from "../Components/Assets/Gauffre_img_2.webp";
+import BubbleImage3 from "../Components/Assets/Gauffre_img_3.webp";
 
-import WaffleImage1 from "../Components/Assets/Waffle_Sucré_img_1.jpeg";
-import WaffleImage2 from "../Components/Assets/Waffle_Sucré_img_2.jpeg";
-import WaffleImage3 from "../Components/Assets/Waffle_Sucré_img_3.jpeg";
-import WaffleImage4 from "../Components/Assets/Waffle_salé_img_1.jpg";
-import WaffleImage5 from "../Components/Assets/Waffle_salé_img_2.jpeg";
-import WaffleImage6 from "../Components/Assets/Waffle_salé_img_3.jpeg";
+import WaffleImage1 from "../Components/Assets/Waffle_Sucré_img_1.webp";
+import WaffleImage2 from "../Components/Assets/Waffle_Sucré_img_2.webp";
+import WaffleImage3 from "../Components/Assets/Waffle_Sucré_img_3.webp";
+import WaffleImage4 from "../Components/Assets/Waffle_salé_img_1.webp";
+import WaffleImage5 from "../Components/Assets/Waffle_salé_img_2.webp";
+import WaffleImage6 from "../Components/Assets/Waffle_salé_img_3.webp";
 
-import MalfoufImage1 from "../Components/Assets/Malfouf_img_1.jpeg";
-import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.jpeg";
-import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.jpg";
+import MalfoufImage1 from "../Components/Assets/Malfouf_img_1.webp";
+import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.webp";
+import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.webp";
 
-import IceCreamImage1 from "../Components/Assets/IceCream_img_1.jpg";
-import IceCreamImage2 from "../Components/Assets/IceCream_img_2.jpg";
-import IceCreamImage3 from "../Components/Assets/IceCream_img_3.jpeg";
-import IceCreamImage4 from "../Components/Assets/IceCream_yagh_img_1.jpeg";
-import IceCreamImage5 from "../Components/Assets/IceCream_yagh_img_2.jpeg";
-import IceCreamImage6 from "../Components/Assets/IceCream_yagh_img_3.jpeg";
+import IceCreamImage1 from "../Components/Assets/IceCream_img_1.webp";
+import IceCreamImage2 from "../Components/Assets/IceCream_img_2.webp";
+import IceCreamImage3 from "../Components/Assets/IceCream_img_3.webp";
+import IceCreamImage4 from "../Components/Assets/IceCream_yagh_img_1.webp";
+import IceCreamImage5 from "../Components/Assets/IceCream_yagh_img_2.webp";
+import IceCreamImage6 from "../Components/Assets/IceCream_yagh_img_3.webp";
 
-import JusImage1 from "../Components/Assets/Jus_img_1.jpeg";
-import JusImage2 from "../Components/Assets/Jus_img_2.jpeg";
-import JusImage3 from "../Components/Assets/Jus_img_3.jpeg";
+import JusImage1 from "../Components/Assets/Jus_img_1.webp";
+import JusImage2 from "../Components/Assets/Jus_img_2.webp";
+import JusImage3 from "../Components/Assets/Jus_img_3.webp";
 
-import JwajemImage1 from "../Components/Assets/Jus_img_1.jpeg";
-import JwajemImage2 from "../Components/Assets/Jus_img_1.jpeg";
-import JwajemImage3 from "../Components/Assets/Jus_img_1.jpeg";
+import JwajemImage1 from "../Components/Assets/Jus_img_1.webp";
+import JwajemImage2 from "../Components/Assets/Jus_img_1.webp";
+import JwajemImage3 from "../Components/Assets/Jus_img_1.webp";
 
-import CafeImage1 from "../Components/Assets/Café_img_1.jpeg";
-import CafeImage2 from "../Components/Assets/Café_img_2.jpg";
-import CafeImage3 from "../Components/Assets/Café_img_3.jpeg";
+import CafeImage1 from "../Components/Assets/Café_img_1.webp";
+import CafeImage2 from "../Components/Assets/Café_img_2.webp";
+import CafeImage3 from "../Components/Assets/Café_img_3.webp";
 
-import PancakeImage1 from "../Components/Assets/Pancake_img_1.jpeg";
-import PancakeImage2 from "../Components/Assets/Pancake_img_2.jpeg";
-import PancakeImage3 from "../Components/Assets/Pancake_img_3.jpeg";
+import PancakeImage1 from "../Components/Assets/Pancake_img_1.webp";
+import PancakeImage2 from "../Components/Assets/Pancake_img_2.webp";
+import PancakeImage3 from "../Components/Assets/Pancake_img_3.webp";
 
-import MilkshakeImage1 from "../Components/Assets/Milkshake_img_1.jpeg";
-import MilkshakeImage2 from "../Components/Assets/Milkshake_img_2.jpeg";
-import MilkshakeImage3 from "../Components/Assets/Milkshake_img_3.jpeg";
+import MilkshakeImage1 from "../Components/Assets/Milkshake_img_1.webp";
+import MilkshakeImage2 from "../Components/Assets/Milkshake_img_2.webp";
+import MilkshakeImage3 from "../Components/Assets/Milkshake_img_3.webp";
 
-import MojitoImage1 from "../Components/Assets/Mojito_img_1.jpg";
-import MojitoImage2 from "../Components/Assets/Mojito_img_2.jpeg";
-import MojitoImage3 from "../Components/Assets/Mojito_img_3.jpeg";
+import MojitoImage1 from "../Components/Assets/Mojito_img_1.webp";
+import MojitoImage2 from "../Components/Assets/Mojito_img_2.webp";
+import MojitoImage3 from "../Components/Assets/Mojito_img_3.webp";
 
 export const iconMap = {
   1: Crepe,

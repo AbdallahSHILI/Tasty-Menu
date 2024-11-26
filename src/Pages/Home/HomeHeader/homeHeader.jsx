@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./home.module.css";
-import TastyLogo from "../../../Components/Assets/TastyLogo.jpeg";
+import TastyLogo from "../../../Components/Assets/TastyLogo.webp";
 
 const HomeHeader = () => {
   return (

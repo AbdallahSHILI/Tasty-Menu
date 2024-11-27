@@ -11,7 +11,7 @@ import CrepeHeader from "../Components/Assets/Crepe_img.webp";
 import GaufreHeader from "../Components/Assets/Gauffre_img.webp";
 import BubbleHeader from "../Components/Assets/Bubbles_img.webp";
 import WaffleHeader from "../Components/Assets/waffle.webp";
-import MalfoufHeader from "../Components/Assets/Malfouf.webp";
+import MalfoufHeader from "../Components/Assets/MalfoufBest.webp";
 import IceCreamHeader from "../Components/Assets/Rolled_IceCream.webp";
 import JusHeader from "../Components/Assets/aa.webp";
 import JwajemHeader from "../Components/Assets/Jwajem.webp";
@@ -46,6 +46,7 @@ import WaffleImage6 from "../Components/Assets/Waffle_salé_img_3.webp";
 import MalfoufImage1 from "../Components/Assets/Malfouf_img_1.webp";
 import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.webp";
 import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.webp";
+import MalfoufImage4 from "../Components/Assets/Malfouf_img_4.webp";
 
 import IceCreamImage1 from "../Components/Assets/IceCream_img_1.webp";
 import IceCreamImage2 from "../Components/Assets/IceCream_img_2.webp";
@@ -407,7 +408,7 @@ export const menuData = {
     category: "Malfouf",
     icon: iconMap[5],
     headerImage: MalfoufHeader,
-    ModalImages: [MalfoufImage1, MalfoufImage2, MalfoufImage3],
+    ModalImages: [MalfoufImage1, MalfoufImage2, MalfoufImage3, MalfoufImage4],
     items: [
       {
         id: "m1",

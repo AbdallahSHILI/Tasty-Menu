@@ -5,7 +5,7 @@ import { menuData } from "../../../../data/menuData";
 import GalerieIcon from "../../../../Components/Assets/Galerie.svg";
 import FoodPic from "../../../../Components/Modal/foodPic";
 
-const Menu = () => {
+const Menu = ({ onSubcategoryChange }) => {
   const { selectedCategory } = useMenu();
   const currentMenu = menuData[selectedCategory];
 
@@ -16,10 +16,17 @@ const Menu = () => {
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
       setSelectedSubcategory(firstSubcategory);
+      // Notify parent component about the initial subcategory
+      onSubcategoryChange(firstSubcategory, selectedCategory);
     }
   }, [selectedCategory, currentMenu]);
 
   if (!currentMenu) return null;
+
+  const handleSubcategoryChange = (key) => {
+    setSelectedSubcategory(key);
+    onSubcategoryChange(key, selectedCategory);
+  };
 
   const renderMenuItems = (items) => {
     return items.map((item) => (
@@ -38,10 +45,6 @@ const Menu = () => {
   const currentSubcategoryItems =
     currentMenu.subcategories?.[selectedSubcategory]?.items;
 
-  const handleGalleryClick = () => {
-    setIsModalOpen(true);
-  };
-
   return (
     <div className={styles.menuContainer}>
       <div className={styles.headerContainer}>
@@ -50,7 +53,7 @@ const Menu = () => {
           src={GalerieIcon}
           alt="Galerie"
           className={styles.galerieIcon}
-          onClick={handleGalleryClick}
+          onClick={() => setIsModalOpen(true)}
         />
       </div>
 
@@ -64,7 +67,7 @@ const Menu = () => {
                   className={`${styles.toggleButton} ${
                     selectedSubcategory === key ? styles.active : ""
                   }`}
-                  onClick={() => setSelectedSubcategory(key)}
+                  onClick={() => handleSubcategoryChange(key)}
                 >
                   {subcategory.title}
                 </button>

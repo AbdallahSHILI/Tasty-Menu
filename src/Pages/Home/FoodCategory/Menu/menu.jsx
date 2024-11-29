@@ -4,6 +4,7 @@ import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
 import GalerieIcon from "../../../../Components/Assets/Galerie.svg";
 import FoodPic from "../../../../Components/Modal/foodPic";
+import Supplement from "../../../Home/Supplement/supplement";
 
 const Menu = ({ onSubcategoryChange }) => {
   const { selectedCategory } = useMenu();
@@ -11,6 +12,16 @@ const Menu = ({ onSubcategoryChange }) => {
 
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const allowedSubcategories = [
+    "sweet",
+    "savory",
+    "SweetOnly",
+    "SavoryOnly",
+    "chocolat",
+    "naturel",
+    "other",
+  ];
 
   useEffect(() => {
     if (currentMenu?.subcategories) {
@@ -59,21 +70,23 @@ const Menu = ({ onSubcategoryChange }) => {
 
       {currentMenu.subcategories && (
         <div className={styles.filterContainer}>
-          <div className={styles.toggleWrapper}>
-            {Object.entries(currentMenu.subcategories).map(
-              ([key, subcategory]) => (
-                <button
-                  key={key}
-                  className={`${styles.toggleButton} ${
-                    selectedSubcategory === key ? styles.active : ""
-                  }`}
-                  onClick={() => handleSubcategoryChange(key)}
-                >
-                  {subcategory.title}
-                </button>
-              )
-            )}
-          </div>
+          {allowedSubcategories.includes(selectedSubcategory) && (
+            <div className={styles.toggleWrapper}>
+              {Object.entries(currentMenu.subcategories).map(
+                ([key, subcategory]) => (
+                  <button
+                    key={key}
+                    className={`${styles.toggleButton} ${
+                      selectedSubcategory === key ? styles.active : ""
+                    }`}
+                    onClick={() => handleSubcategoryChange(key)}
+                  >
+                    {subcategory.title}
+                  </button>
+                )
+              )}
+            </div>
+          )}
         </div>
       )}
 
@@ -82,6 +95,9 @@ const Menu = ({ onSubcategoryChange }) => {
           ? currentSubcategoryItems && renderMenuItems(currentSubcategoryItems)
           : renderMenuItems(currentMenu.items)}
       </div>
+
+      {/* Supplement Section */}
+      <Supplement subcategory={selectedSubcategory} />
 
       <FoodPic
         images={currentMenu.ModalImages}

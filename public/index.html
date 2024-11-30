@@ -24,7 +24,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Your App Name</title>
+    <script>
+      window.addEventListener('error', function(e) {
+        if (e.message === 'ResizeObserver loop completed with undelivered notifications.') {
+          e.stopImmediatePropagation();
+        }
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

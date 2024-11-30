@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./menu.module.css";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
 import GalerieIcon from "../../../../Components/Assets/Galerie.svg";
 import FoodPic from "../../../../Components/Modal/foodPic";
-import Supplement from "../../../Home/Supplement/supplement";
 
 const Menu = ({ onSubcategoryChange }) => {
   const { selectedCategory } = useMenu();
@@ -27,10 +26,35 @@ const Menu = ({ onSubcategoryChange }) => {
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
       setSelectedSubcategory(firstSubcategory);
-      // Notify parent component about the initial subcategory
       onSubcategoryChange(firstSubcategory, selectedCategory);
+    } else {
+      setSelectedSubcategory(null);
+      onSubcategoryChange(null, selectedCategory);
     }
   }, [selectedCategory, currentMenu]);
+
+  // Add debounced resize handler
+  const debouncedResizeHandler = useCallback(() => {
+    let timeoutId = null;
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        window.dispatchEvent(new Event("resize"));
+      }, 100);
+    };
+  }, []);
+
+  // Add resize observer effect
+  useEffect(() => {
+    const resizeHandler = debouncedResizeHandler();
+    window.addEventListener("resize", resizeHandler);
+
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, [debouncedResizeHandler]);
 
   if (!currentMenu) return null;
 
@@ -70,23 +94,26 @@ const Menu = ({ onSubcategoryChange }) => {
 
       {currentMenu.subcategories && (
         <div className={styles.filterContainer}>
-          {allowedSubcategories.includes(selectedSubcategory) && (
-            <div className={styles.toggleWrapper}>
-              {Object.entries(currentMenu.subcategories).map(
-                ([key, subcategory]) => (
-                  <button
-                    key={key}
-                    className={`${styles.toggleButton} ${
-                      selectedSubcategory === key ? styles.active : ""
-                    }`}
-                    onClick={() => handleSubcategoryChange(key)}
-                  >
-                    {subcategory.title}
-                  </button>
-                )
-              )}
-            </div>
-          )}
+          {["sweet", "savory", "chocolat", "naturel", "other"].includes(
+            selectedSubcategory
+          ) &&
+            Object.keys(currentMenu.subcategories).length > 1 && (
+              <div className={styles.toggleWrapper}>
+                {Object.entries(currentMenu.subcategories).map(
+                  ([key, subcategory]) => (
+                    <button
+                      key={key}
+                      className={`${styles.toggleButton} ${
+                        selectedSubcategory === key ? styles.active : ""
+                      }`}
+                      onClick={() => handleSubcategoryChange(key)}
+                    >
+                      {subcategory.title}
+                    </button>
+                  )
+                )}
+              </div>
+            )}
         </div>
       )}
 
@@ -95,9 +122,6 @@ const Menu = ({ onSubcategoryChange }) => {
           ? currentSubcategoryItems && renderMenuItems(currentSubcategoryItems)
           : renderMenuItems(currentMenu.items)}
       </div>
-
-      {/* Supplement Section */}
-      <Supplement subcategory={selectedSubcategory} />
 
       <FoodPic
         images={currentMenu.ModalImages}

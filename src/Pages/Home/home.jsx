@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./home.module.css";
 import { HomeHeader, FoodCategory, Menu, Supplement } from "../index";
+import { menuData } from "../../data/menuData";
 
 const Home = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
@@ -16,9 +17,14 @@ const Home = () => {
           setCategoryId(category);
         }}
       />
-      {selectedSubcategory && categoryId && (
-        <Supplement subcategory={selectedSubcategory} categoryId={categoryId} />
-      )}
+      {selectedSubcategory &&
+        categoryId &&
+        menuData[categoryId].subcategories && (
+          <Supplement
+            subcategory={selectedSubcategory}
+            categoryId={categoryId}
+          />
+        )}
     </div>
   );
 };

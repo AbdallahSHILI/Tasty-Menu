@@ -12,16 +12,6 @@ const Menu = ({ onSubcategoryChange }) => {
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const allowedSubcategories = [
-    "sweet",
-    "savory",
-    "SweetOnly",
-    "SavoryOnly",
-    "chocolat",
-    "naturel",
-    "other",
-  ];
-
   useEffect(() => {
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];

@@ -28,9 +28,9 @@ const CategoryPage = ({ category }) => {
     : [];
   const hasSubcategories = subcategoryKeys.length > 0;
 
-  const currentSubcategory = hasSubcategories
-    ? currentMenu.subcategories[activeSubcategory || subcategoryKeys[0]]
-    : null;
+  const currentItems = hasSubcategories
+    ? currentMenu.subcategories[activeSubcategory]?.items
+    : currentMenu.items;
 
   const handleReturn = () => {
     navigate(-1);
@@ -72,54 +72,33 @@ const CategoryPage = ({ category }) => {
         </div>
       </div>
 
-      {hasSubcategories && (
-        <div className={styles.filterContainer}>
-          <div className={styles.toggleWrapper}>
-            {subcategoryKeys.map((key) => (
-              <button
-                key={key}
-                className={`${styles.toggleButton} ${
-                  activeSubcategory === key ? styles.active : ""
-                }`}
-                onClick={() => handleSubcategoryChange(key)}
-              >
-                {currentMenu.subcategories[key].title}
-              </button>
-            ))}
-          </div>
+      {hasSubcategories && subcategoryKeys.length > 1 && (
+        <div className={styles.toggleWrapper}>
+          {subcategoryKeys.map((key) => (
+            <button
+              key={key}
+              className={`${styles.toggleButton} ${
+                activeSubcategory === key ? styles.active : ""
+              }`}
+              onClick={() => handleSubcategoryChange(key)}
+            >
+              {currentMenu.subcategories[key].title}
+            </button>
+          ))}
         </div>
       )}
-
       <div className={styles.menuSection}>
-        {currentMenu.subcategories ? (
-          currentSubcategory && (
-            <div className={styles.subcategoryContainer}>
-              <div className={styles.itemsGrid}>
-                {currentSubcategory.items.map((item) => (
-                  <div key={item.id} className={styles.menuItem}>
-                    <h3 className={styles.itemName}>{item.name}</h3>
-                    <p className={styles.price}>{item.price} DT</p>
-                    {item.ingredients && (
-                      <p className={styles.ingredients}>{item.ingredients}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
+        <div className={styles.itemsGrid}>
+          {currentItems?.map((item) => (
+            <div key={item.id} className={styles.menuItem}>
+              <h3 className={styles.itemName}>{item.name}</h3>
+              <p className={styles.price}>{item.price} DT</p>
+              {item.ingredients && (
+                <p className={styles.ingredients}>{item.ingredients}</p>
+              )}
             </div>
-          )
-        ) : (
-          <div className={styles.itemsGrid}>
-            {currentMenu.items.map((item) => (
-              <div key={item.id} className={styles.menuItem}>
-                <h3 className={styles.itemName}>{item.name}</h3>
-                <p className={styles.price}>{item.price} DT</p>
-                {item.ingredients && (
-                  <p className={styles.ingredients}>{item.ingredients}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+          ))}
+        </div>
       </div>
 
       {/* Add FoodPic modal component */}

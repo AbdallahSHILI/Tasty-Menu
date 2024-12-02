@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import GalerieIcon from "../../Components/Assets/Galerie.svg";
 import ReturnIcon from "../../Components/Assets/Return.svg";
 import FoodPic from "../../Components/Modal/foodPic"; // Import the FoodPic component
+import { Supplement } from "../index";
 
 const CategoryPage = ({ category }) => {
   const currentMenu = menuData[category];
@@ -20,6 +21,9 @@ const CategoryPage = ({ category }) => {
   const [activeSubcategory, setActiveSubcategory] =
     useState(defaultSubcategory);
   const [activeFilter, setActiveFilter] = useState(null);
+  const [selectedSubcategory, setSelectedSubcategory] =
+    useState(defaultSubcategory);
+  const [categoryId] = useState(category);
 
   if (!currentMenu) return null;
 
@@ -43,7 +47,26 @@ const CategoryPage = ({ category }) => {
 
   const handleSubcategoryChange = (subcategory) => {
     setActiveSubcategory(subcategory);
+    setSelectedSubcategory(subcategory);
     setActiveFilter(null);
+  };
+
+  const shouldShowSupplement = () => {
+    if (!categoryId) return false;
+
+    const currentMenu = menuData[categoryId];
+
+    // Check for subcategories (sweet/savory toggle)
+    if (currentMenu?.subcategories && selectedSubcategory) {
+      return ["sweet", "savory"].includes(selectedSubcategory);
+    }
+
+    // Check for subcat property (SweetOnly/SavoryOnly)
+    if (currentMenu?.subcat) {
+      return ["SweetOnly", "SavoryOnly"].includes(currentMenu.subcat);
+    }
+
+    return false;
   };
 
   return (
@@ -100,8 +123,15 @@ const CategoryPage = ({ category }) => {
           ))}
         </div>
       </div>
+      {shouldShowSupplement() && (
+        <Supplement
+          subcategory={
+            selectedSubcategory ||
+            (menuData[categoryId]?.subcat === "SweetOnly" ? "sweet" : "savory")
+          }
+        />
+      )}
 
-      {/* Add FoodPic modal component */}
       <FoodPic
         images={currentMenu.ModalImages}
         isOpen={isModalOpen}

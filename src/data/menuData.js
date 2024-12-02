@@ -290,6 +290,7 @@ export const menuData = {
     icon: iconMap[3],
     headerImage: BubbleHeader,
     ModalImages: [BubbleImage1, BubbleImage2, BubbleImage3],
+    subcat: "SweetOnly",
     items: [
       {
         id: "b1",
@@ -409,6 +410,7 @@ export const menuData = {
     icon: iconMap[5],
     headerImage: MalfoufHeader,
     ModalImages: [MalfoufImage1, MalfoufImage2, MalfoufImage3, MalfoufImage4],
+    subcat: "SavoryOnly",
     items: [
       {
         id: "m1",
@@ -453,6 +455,7 @@ export const menuData = {
       IceCreamImage5,
       IceCreamImage6,
     ],
+    subcat: "SweetOnly",
     items: [
       {
         id: "r1",
@@ -539,6 +542,7 @@ export const menuData = {
     icon: iconMap[8],
     headerImage: JwajemHeader,
     ModalImages: [JwajemImage1, JwajemImage2, JwajemImage3],
+    subcat: "SweetOnly",
     subcategories: {
       chocolat: {
         title: "Chocolat",
@@ -640,64 +644,61 @@ export const menuData = {
     icon: iconMap[10],
     headerImage: PancakeHeader,
     ModalImages: [PancakeImage1, PancakeImage2, PancakeImage3],
-    subcategories: {
-      SweetOnly: {
-        title: "Sweet Only",
-        items: [
-          {
-            id: "s1",
-            name: "Chocolat",
-            price: "7.000",
-          },
-          {
-            id: "s2",
-            name: "Fruits Secs",
-            price: "9.000",
-          },
-          {
-            id: "s3",
-            name: "Banane",
-            price: "9.000",
-          },
-          {
-            id: "s4",
-            name: "Oreo",
-            price: "9.000",
-          },
-          {
-            id: "s5",
-            name: "Speculoos",
-            price: "9.000",
-          },
-          {
-            id: "s7",
-            name: "Ferrero",
-            price: "10.000",
-          },
-          {
-            id: "s8",
-            name: "Snickers",
-            price: "10.000",
-          },
-          {
-            id: "s6",
-            name: "Tasty",
-            price: "12.000",
-          },
-          {
-            id: "s9",
-            name: "Pistache",
-            price: "12.000",
-          },
-        ],
+    subcat: "SweetOnly",
+    items: [
+      {
+        id: "s1",
+        name: "Chocolat",
+        price: "7.000",
       },
-    },
+      {
+        id: "s2",
+        name: "Fruits Secs",
+        price: "9.000",
+      },
+      {
+        id: "s3",
+        name: "Banane",
+        price: "9.000",
+      },
+      {
+        id: "s4",
+        name: "Oreo",
+        price: "9.000",
+      },
+      {
+        id: "s5",
+        name: "Speculoos",
+        price: "9.000",
+      },
+      {
+        id: "s7",
+        name: "Ferrero",
+        price: "10.000",
+      },
+      {
+        id: "s8",
+        name: "Snickers",
+        price: "10.000",
+      },
+      {
+        id: "s6",
+        name: "Tasty",
+        price: "12.000",
+      },
+      {
+        id: "s9",
+        name: "Pistache",
+        price: "12.000",
+      },
+    ],
   },
   11: {
     category: "Milkshake",
     icon: iconMap[11],
     headerImage: MilkshakeHeader,
     ModalImages: [MilkshakeImage1, MilkshakeImage2, MilkshakeImage3],
+    subcat: "SweetOnly",
     items: [
       {
         id: "m1",

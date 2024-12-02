@@ -290,50 +290,45 @@ export const menuData = {
     icon: iconMap[3],
     headerImage: BubbleHeader,
     ModalImages: [BubbleImage1, BubbleImage2, BubbleImage3],
-    subcategories: {
-      SweetOnly: {
-        title: "Sweet Only",
-        items: [
-          {
-            id: "b1",
-            name: "Chocolat",
-            price: "7.000",
-          },
-          {
-            id: "b2",
-            name: "Ice",
-            price: "8.500",
-          },
-          {
-            id: "b3",
-            name: "Oreo",
-            price: "8.500",
-          },
-          {
-            id: "b4",
-            name: "Bubble Speculoos",
-            price: "8.500",
-          },
-          {
-            id: "b5",
-            name: "Bubble Fruits Secs",
-            price: "9.000",
-          },
-          {
-            id: "b6",
-            name: "Banane",
-            price: "9.000",
-          },
-          {
-            id: "b7",
-            name: "Tasty",
-            price: "12.000",
-            ingredients:
-              "Chocolat / Fruits secs / Oreo / Speculoos / Ice / Supplément chocolat",
-          },
-        ],
+    items: [
+      {
+        id: "b1",
+        name: "Chocolat",
+        price: "7.000",
       },
-    },
+      {
+        id: "b2",
+        name: "Ice",
+        price: "8.500",
+      },
+      {
+        id: "b3",
+        name: "Oreo",
+        price: "8.500",
+      },
+      {
+        id: "b4",
+        name: "Bubble Speculoos",
+        price: "8.500",
+      },
+      {
+        id: "b5",
+        name: "Bubble Fruits Secs",
+        price: "9.000",
+      },
+      {
+        id: "b6",
+        name: "Banane",
+        price: "9.000",
+      },
+      {
+        id: "b7",
+        name: "Tasty",
+        price: "12.000",
+        ingredients:
+          "Chocolat / Fruits secs / Oreo / Speculoos / Ice / Supplément chocolat",
+      },
+    ],
   },
   4: {
     category: "Waffle",
@@ -414,43 +409,37 @@ export const menuData = {
     icon: iconMap[5],
     headerImage: MalfoufHeader,
     ModalImages: [MalfoufImage1, MalfoufImage2, MalfoufImage3, MalfoufImage4],
-    subcategories: {
-      SavoryOnly: {
-        title: "Savory only",
-        items: [
-          {
-            id: "m1",
-            name: "Malfouf Thon",
-            price: "5.500",
-            ingredients: "Thon / Fromage / Sauce piquante",
-          },
-          {
-            id: "m2",
-            name: "Malfouf Salami",
-            price: "5.500",
-            ingredients: "Salami / Fromage / Sauce piquante",
-          },
-          {
-            id: "m3",
-            name: "Malfouf Jambon",
-            price: "5.500",
-            ingredients: "Jambon / Fromage / Sauce piquante ",
-          },
-          {
-            id: "m4",
-            name: "Malfouf Escalope",
-            price: "7.000",
-            ingredients:
-              "Escalope / Fromage / Légumes grillés / Sauce piquante ",
-          },
-          {
-            id: "m5",
-            name: "Omelette",
-            price: "7.000",
-          },
-        ],
+    items: [
+      {
+        id: "m1",
+        name: "Malfouf Thon",
+        price: "5.500",
+        ingredients: "Thon / Fromage / Sauce piquante",
       },
-    },
+      {
+        id: "m2",
+        name: "Malfouf Salami",
+        price: "5.500",
+        ingredients: "Salami / Fromage / Sauce piquante",
+      },
+      {
+        id: "m3",
+        name: "Malfouf Jambon",
+        price: "5.500",
+        ingredients: "Jambon / Fromage / Sauce piquante ",
+      },
+      {
+        id: "m4",
+        name: "Malfouf Escalope",
+        price: "7.000",
+        ingredients: "Escalope / Fromage / Légumes grillés / Sauce piquante ",
+      },
+      {
+        id: "m5",
+        name: "Omelette",
+        price: "7.000",
+      },
+    ],
   },
   6: {
     category: "Ice_Cream",
@@ -464,43 +453,38 @@ export const menuData = {
       IceCreamImage5,
       IceCreamImage6,
     ],
-    subcategories: {
-      SweetOnly: {
-        title: "Sweet Only",
-        items: [
-          {
-            id: "r1",
-            name: "Arôme Café",
-            price: "6.000",
-          },
-          {
-            id: "r2",
-            name: "Fruits au choix",
-            price: "6.500",
-          },
-          {
-            id: "r3",
-            name: "Chocolat au choix",
-            price: "7.000",
-          },
-          {
-            id: "r4",
-            name: "Yaourt Glacé Petit",
-            price: "5.000",
-          },
-          {
-            id: "r5",
-            name: "Yaourt Glacé Grand",
-            price: "7.000",
-          },
-          {
-            id: "r6",
-            name: "Chocolat Glacé/Chaud",
-            price: "7.000",
-          },
-        ],
+    items: [
+      {
+        id: "r1",
+        name: "Arôme Café",
+        price: "6.000",
       },
-    },
+      {
+        id: "r2",
+        name: "Fruits au choix",
+        price: "6.500",
+      },
+      {
+        id: "r3",
+        name: "Chocolat au choix",
+        price: "7.000",
+      },
+      {
+        id: "r4",
+        name: "Yaourt Glacé Petit",
+        price: "5.000",
+      },
+      {
+        id: "r5",
+        name: "Yaourt Glacé Grand",
+        price: "7.000",
+      },
+      {
+        id: "r6",
+        name: "Chocolat Glacé/Chaud",
+        price: "7.000",
+      },
+    ],
   },
   7: {
     category: "Jus",
@@ -775,6 +759,4 @@ export const menuData = {
       },
     ],
   },
-
-  // You can continue adding other categories (6, 7, etc.) following the same pattern
 };

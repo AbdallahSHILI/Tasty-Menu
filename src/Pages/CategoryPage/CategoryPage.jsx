@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import GalerieIcon from "../../Components/Assets/Galerie.svg";
 import ReturnIcon from "../../Components/Assets/Return.svg";
 import FoodPic from "../../Components/Modal/foodPic"; // Import the FoodPic component
+import { Supplement } from "../index";
 
 const CategoryPage = ({ category }) => {
   const currentMenu = menuData[category];
@@ -20,6 +21,9 @@ const CategoryPage = ({ category }) => {
   const [activeSubcategory, setActiveSubcategory] =
     useState(defaultSubcategory);
   const [activeFilter, setActiveFilter] = useState(null);
+  const [selectedSubcategory, setSelectedSubcategory] =
+    useState(defaultSubcategory);
+  const [categoryId] = useState(category);
 
   if (!currentMenu) return null;
 
@@ -43,6 +47,7 @@ const CategoryPage = ({ category }) => {
 
   const handleSubcategoryChange = (subcategory) => {
     setActiveSubcategory(subcategory);
+    setSelectedSubcategory(subcategory);
     setActiveFilter(null);
   };
 
@@ -100,8 +105,15 @@ const CategoryPage = ({ category }) => {
           ))}
         </div>
       </div>
+      {selectedSubcategory &&
+        categoryId &&
+        menuData[categoryId].subcategories && (
+          <Supplement
+            subcategory={selectedSubcategory}
+            categoryId={categoryId}
+          />
+        )}
 
-      {/* Add FoodPic modal component */}
       <FoodPic
         images={currentMenu.ModalImages}
         isOpen={isModalOpen}

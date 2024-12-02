@@ -51,6 +51,24 @@ const CategoryPage = ({ category }) => {
     setActiveFilter(null);
   };
 
+  const shouldShowSupplement = () => {
+    if (!categoryId) return false;
+
+    const currentMenu = menuData[categoryId];
+
+    // Check for subcategories (sweet/savory toggle)
+    if (currentMenu?.subcategories && selectedSubcategory) {
+      return ["sweet", "savory"].includes(selectedSubcategory);
+    }
+
+    // Check for subcat property (SweetOnly/SavoryOnly)
+    if (currentMenu?.subcat) {
+      return ["SweetOnly", "SavoryOnly"].includes(currentMenu.subcat);
+    }
+
+    return false;
+  };
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.headerSection}>
@@ -105,14 +123,14 @@ const CategoryPage = ({ category }) => {
           ))}
         </div>
       </div>
-      {selectedSubcategory &&
-        categoryId &&
-        menuData[categoryId].subcategories && (
-          <Supplement
-            subcategory={selectedSubcategory}
-            categoryId={categoryId}
-          />
-        )}
+      {shouldShowSupplement() && (
+        <Supplement
+          subcategory={
+            selectedSubcategory ||
+            (menuData[categoryId]?.subcat === "SweetOnly" ? "sweet" : "savory")
+          }
+        />
+      )}
 
       <FoodPic
         images={currentMenu.ModalImages}

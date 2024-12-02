@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./categoryPage.module.css";
 import { useMenu } from "../../context/MenuContext";
 import { menuData } from "../../data/menuData";
@@ -15,15 +15,21 @@ const CategoryPage = ({ category }) => {
   // Add state for modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Reset selectedSubcategory when category changes
+  const [categoryId, setCategoryId] = useState(category);
+  useEffect(() => {
+    setCategoryId(category);
+    // Reset selectedSubcategory when category changes
+    setSelectedSubcategory(null);
+  }, [category]);
+
   const defaultSubcategory = currentMenu?.subcategories
     ? Object.keys(currentMenu.subcategories)[0]
     : null;
   const [activeSubcategory, setActiveSubcategory] =
     useState(defaultSubcategory);
   const [activeFilter, setActiveFilter] = useState(null);
-  const [selectedSubcategory, setSelectedSubcategory] =
-    useState(defaultSubcategory);
-  const [categoryId] = useState(category);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
   if (!currentMenu) return null;
 
@@ -56,14 +62,16 @@ const CategoryPage = ({ category }) => {
 
     const currentMenu = menuData[categoryId];
 
-    // Check for subcategories (sweet/savory toggle)
-    if (currentMenu?.subcategories && selectedSubcategory) {
-      return ["sweet", "savory"].includes(selectedSubcategory);
-    }
-
-    // Check for subcat property (SweetOnly/SavoryOnly)
+    // First check for subcat property (SweetOnly/SavoryOnly)
     if (currentMenu?.subcat) {
       return ["SweetOnly", "SavoryOnly"].includes(currentMenu.subcat);
+    }
+
+    // Then check for subcategories (sweet/savory toggle)
+    if (currentMenu?.subcategories && selectedSubcategory) {
+      return ["sweet", "savory", "sucré", "salé"].includes(
+        selectedSubcategory.toLowerCase()
+      );
     }
 
     return false;
@@ -126,8 +134,15 @@ const CategoryPage = ({ category }) => {
       {shouldShowSupplement() && (
         <Supplement
           subcategory={
-            selectedSubcategory ||
-            (menuData[categoryId]?.subcat === "SweetOnly" ? "sweet" : "savory")
+            menuData[categoryId]?.subcat === "SweetOnly"
+              ? "sweet"
+              : menuData[categoryId]?.subcat === "SavoryOnly"
+              ? "savory"
+              : selectedSubcategory?.toLowerCase() === "sucré"
+              ? "sweet"
+              : selectedSubcategory?.toLowerCase() === "salé"
+              ? "savory"
+              : selectedSubcategory
           }
         />
       )}

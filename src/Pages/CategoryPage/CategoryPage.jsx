@@ -122,8 +122,10 @@ const CategoryPage = ({ category }) => {
         <div className={styles.itemsGrid}>
           {currentItems?.map((item) => (
             <div key={item.id} className={styles.menuItem}>
-              <h3 className={styles.itemName}>{item.name}</h3>
-              <p className={styles.price}>{item.price} DT</p>
+              <div className={styles.itemHeader}>
+                <h3 className={styles.itemName}>{item.name}</h3>
+                <p className={styles.price}>{item.price}</p>
+              </div>
               {item.ingredients && (
                 <p className={styles.ingredients}>{item.ingredients}</p>
               )}

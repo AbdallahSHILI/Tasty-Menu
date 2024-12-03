@@ -58,7 +58,7 @@ const Menu = ({ onSubcategoryChange }) => {
       <div key={item.id} className={styles.menuItem}>
         <div className={styles.itemHeader}>
           <h3 className={styles.itemName}>{item.name}</h3>
-          <span className={styles.price}>{item.price} DT</span>
+          <span className={styles.price}>{item.price}</span>
         </div>
         {item.ingredients && (
           <p className={styles.ingredients}>{item.ingredients}</p>

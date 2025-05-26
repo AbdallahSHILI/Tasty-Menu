@@ -35,15 +35,26 @@
 .headerImage {
   width: 100%;
   margin-top: -135px;
-  height: 560px; /* Adjust height as needed */
-  background-image: url("../../Components/Assets/Crepe_img.webp");
+  height: 560px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
   position: relative;
   margin-bottom: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: zoomIn 15s ease-in-out infinite alternate;
+  overflow: hidden;
+}
+
+.headerImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
 }
 
 .categoryTitle {
@@ -293,5 +304,14 @@
   .toggleButton {
     padding: 6px 10px;
     font-size: 0.85rem;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
   }
 }

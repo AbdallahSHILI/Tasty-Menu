@@ -55,3 +55,17 @@
     height: 16px;
   }
 }
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.logo {
+  animation: pulse 1.5s infinite ease-in-out;
+}

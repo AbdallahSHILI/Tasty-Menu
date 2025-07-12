@@ -498,12 +498,12 @@ export const menuData = {
       {
         id: "j1",
         name: "Jus Citron",
-        price: "3.000",
+        price: "3.500",
       },
       {
         id: "j2",
         name: "Jus Orange",
-        price: "3.000",
+        price: "3.500",
       },
       {
         id: "j3",

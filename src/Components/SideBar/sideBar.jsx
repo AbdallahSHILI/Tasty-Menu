@@ -55,7 +55,7 @@ const SideBar = ({ isOpen, onClose }) => {
       className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}
     >
       <Link
-        to="/"
+        to="/Home"
         className={`${styles.categoryItem} ${styles.homeItem}`}
         onClick={onClose}
       >
@@ -67,7 +67,7 @@ const SideBar = ({ isOpen, onClose }) => {
       {Object.entries(menuData).map(([id, category]) => (
         <Link
           key={id}
-          to={categoryRoutes[id] || "/"}
+          to={categoryRoutes[id] || "/Home"}
           className={styles.categoryItem}
           onClick={onClose}
         >

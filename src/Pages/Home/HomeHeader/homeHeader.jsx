@@ -5,11 +5,7 @@ import TastyLogo from "../../../Components/Assets/TastyLogo.webp";
 const HomeHeader = () => {
   return (
     <div className={styles.headerContainer}>
-      <img
-        src={TastyLogo} // Replace with your image path
-        alt="Header Banner"
-        className={styles.headerImage}
-      />
+      <img src={TastyLogo} alt="Header Banner" className={styles.headerImage} />
     </div>
   );
 };

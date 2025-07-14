@@ -6,3 +6,4 @@ export { default as MainFood } from "./Home/FoodCategory/MainFood/mainFood";
 export { default as Menu } from "./Home/FoodCategory/Menu/menu";
 export { default as CategoryPage } from "./CategoryPage/CategoryPage";
 export { default as Supplement } from "./Home/Supplement/supplement";
+export { default as LandingPage } from "./LandingPage/landingPage";

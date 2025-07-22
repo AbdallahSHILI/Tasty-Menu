@@ -54,7 +54,8 @@
 .itemName {
   font-size: 1.4rem;
   font-weight: 700;
-  font-family: "Great Vibes", cursive;
+  font-family: "Dancing Script", "Brush Script MT", "Lucida Handwriting",
+    cursive;
   color: #333;
   margin: 0;
   text-align: left;

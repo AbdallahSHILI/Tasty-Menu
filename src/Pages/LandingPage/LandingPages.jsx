@@ -15,6 +15,7 @@ const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Define your landing page data
+  //testing comment
   const landingPages = [
     {
       id: 1,

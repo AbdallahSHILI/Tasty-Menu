@@ -9,9 +9,9 @@ import TastyBlackLogo from "../../Components/Assets/Tasty_BlackLogo.png";
 import TastyWhiteLogo from "../../Components/Assets/TastyWhiteLogo.png";
 import TastyBlueMarineLogo from "../../Components/Assets/TastyBlueMarineLogo.jpg";
 import TastyGreenLogo from "../../Components/Assets/TastyGreenLogo.jpg";
-import styles from "./LandingPage.module.css";
+import styles from "./LandingPages.module.css";
 
-const LandingPage = () => {
+const LandingPages = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   // Define your landing page data
@@ -90,4 +90,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default LandingPages;

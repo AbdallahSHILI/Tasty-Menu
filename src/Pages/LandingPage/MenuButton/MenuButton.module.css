@@ -1,39 +1,3 @@
-/* Landing page styles */
-.landingContainer {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 0vh;
-  background-color: #ffecb3;
-}
-
-.imageContainer {
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 20px;
-  margin-top: 2rem;
-}
-
-.landingImage {
-  width: 85%;
-  height: 85%;
-  object-fit: contain;
-  object-position: center;
-}
-
-.logo {
-  max-width: 200px;
-  height: auto;
-  margin: 20px auto 0;
-}
-
 /* Menu Button Styles */
 .menuButton {
   background: linear-gradient(145deg, #ff6b35, #f7931e);
@@ -104,26 +68,6 @@
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-  .landingContainer {
-    align-items: center;
-    padding-top: 1rem;
-  }
-
-  .imageContainer {
-    width: 300px;
-    height: 300px;
-    margin-top: 1rem;
-  }
-
-  .landingImage {
-    width: 100%;
-    height: 100%;
-  }
-
-  .logo {
-    max-width: 150px;
-  }
-
   .menuButton {
     padding: 14px 28px;
     font-size: 16px;
@@ -138,11 +82,6 @@
 
 /* Media query for very small screens */
 @media (max-width: 480px) {
-  .imageContainer {
-    width: 250px;
-    height: 250px;
-  }
-
   .menuButton {
     padding: 12px 24px;
     font-size: 15px;

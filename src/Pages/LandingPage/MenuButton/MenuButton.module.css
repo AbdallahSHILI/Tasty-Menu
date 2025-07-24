@@ -1,0 +1,99 @@
+/* Menu Button Styles */
+.menuButton {
+  background: linear-gradient(145deg, #ff6b35, #f7931e);
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.menuButton:hover::before {
+  left: 100%;
+}
+
+.menuButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 107, 53, 0.4);
+  background: linear-gradient(145deg, #ff7a47, #f89d2e);
+}
+
+.menuButton:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.buttonText {
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.menuButton:hover .buttonIcon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .menuButton {
+    padding: 14px 28px;
+    font-size: 16px;
+    margin-top: 70px;
+  }
+
+  .buttonIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+  .menuButton {
+    padding: 12px 24px;
+    font-size: 15px;
+    margin-top: 70px;
+  }
+
+  .buttonText {
+    font-size: 14px;
+  }
+
+  .buttonIcon {
+    width: 16px;
+    height: 16px;
+  }
+}

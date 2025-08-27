@@ -1,3 +1,6 @@
+/* Add this at the top of your CSS file to import Dancing Script */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
 .menuContainer {
   padding: 20px;
   background-color: white;
@@ -54,11 +57,20 @@
 .itemName {
   font-size: 1.4rem;
   font-weight: 700;
+  /* Updated font stack with better fallbacks and font-display */
   font-family: "Dancing Script", "Brush Script MT", "Lucida Handwriting",
-    cursive;
+    "Segoe Script", "Monotype Corsiva", cursive;
+  font-display: swap; /* Ensures text is visible during font load */
   color: #333;
   margin: 0;
   text-align: left;
+  /* Force font loading */
+  -webkit-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+}
+
+.notranslate {
+  translate: no; /* modern browsers */
 }
 
 .price {
@@ -93,6 +105,15 @@
 
   .menuItem {
     padding: 12px;
+  }
+
+  /* Ensure font loads properly on mobile */
+  .itemName {
+    font-size: 1.3rem;
+    font-weight: 600;
+    /* Additional mobile-specific font loading */
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
   }
 }
 

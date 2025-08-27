@@ -57,7 +57,9 @@ const Menu = ({ onSubcategoryChange }) => {
     return items.map((item) => (
       <div key={item.id} className={styles.menuItem}>
         <div className={styles.itemHeader}>
-          <h3 className={styles.itemName}>{item.name}</h3>
+          <h3 className={`${styles.itemName} notranslate`} translate="no">
+            {item.name}
+          </h3>
           <span className={styles.price}>{item.price}</span>
         </div>
         {item.ingredients && (

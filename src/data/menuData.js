@@ -500,11 +500,11 @@ export const menuData = {
         name: "Jus Citron",
         price: "3.500",
       },
-      {
-        id: "j2",
-        name: "Jus Orange",
-        price: "3.500",
-      },
+      // {
+      //   id: "j2",
+      //   name: "Jus Orange",
+      //   price: "3.500",
+      // },
       {
         id: "j3",
         name: "Jus Fraise",

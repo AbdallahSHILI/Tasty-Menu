@@ -66,6 +66,7 @@ import JwajemImage3 from "../Components/Assets/Jus_img_1.webp";
 import CafeImage1 from "../Components/Assets/Café_img_1.webp";
 import CafeImage2 from "../Components/Assets/Café_img_2.webp";
 import CafeImage3 from "../Components/Assets/Café_img_3.webp";
+import CafeImage4 from "../Components/Assets/iced_Coffe.jpg";
 
 import PancakeImage1 from "../Components/Assets/Pancake_img_1.webp";
 import PancakeImage2 from "../Components/Assets/Pancake_img_2.webp";
@@ -610,7 +611,7 @@ export const menuData = {
     category: "Café",
     icon: iconMap[9],
     headerImage: CafeHeader,
-    ModalImages: [CafeImage1, CafeImage2, CafeImage3],
+    ModalImages: [CafeImage1, CafeImage2, CafeImage3, CafeImage4],
     items: [
       {
         id: "c1",
@@ -636,6 +637,11 @@ export const menuData = {
         id: "c5",
         name: "Capuccino",
         price: "5.000",
+      },
+      {
+        id: "c6",
+        name: "café glacé",
+        price: "7.000",
       },
     ],
   },

@@ -357,7 +357,7 @@ export const menuData = {
           {
             id: "ws2",
             name: "Ice",
-            price: "8.000",
+            price: "8.500",
             ingredients: "Chocolat / 2 Boules Glaces / Chantilly",
           },
           {
@@ -369,14 +369,14 @@ export const menuData = {
           {
             id: "ws4",
             name: "Speculoos",
-            price: "9.000",
+            price: "9.500",
             ingredients:
               "Chocolat / Boule Glace / Biscuit speculoos / Caramel / Chantilly",
           },
           {
             id: "ws5",
             name: "Oreo",
-            price: "9.000",
+            price: "9.500",
             ingredients: "Chocolat / Boule Glace / Biscuit Oreo / Chantilly",
           },
         ],

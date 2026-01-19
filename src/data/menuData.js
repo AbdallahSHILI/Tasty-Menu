@@ -148,13 +148,8 @@ export const menuData = {
           },
           {
             id: "s9",
-            name: "Mars",
-            price: "12.000",
-          },
-          {
-            id: "s10",
-            name: "Kinder Bueno",
-            price: "12.000",
+            name: "Pistache",
+            price: "15.000",
           },
           {
             id: "s11",
@@ -187,7 +182,7 @@ export const menuData = {
           {
             id: "sv4",
             name: "Tunisienne",
-            price: "8.00",
+            price: "8.500",
             ingredients: "Thon / Fromage / Sauce piquante / Œuf",
           },
           {
@@ -250,23 +245,24 @@ export const menuData = {
           },
           {
             id: "s6",
+            name: "Tasty",
+            price: "13.000",
+            ingredients: "Chocolat / Banane / Fruits secs / Chantilly",
+          },
+          {
+            id: "s7",
             name: "Ferrero",
             price: "12.000",
           },
           {
-            id: "s7",
+            id: "s8",
             name: "Snickers",
             price: "12.000",
           },
           {
-            id: "s8",
-            name: "Kinder Bueno",
-            price: "12.000",
-          },
-          {
             id: "s9",
-            name: "Mars",
-            price: "12.000",
+            name: "Pistache",
+            price: "15.000",
           },
           {
             id: "s10",
@@ -287,32 +283,31 @@ export const menuData = {
           {
             id: "sv1",
             name: "Thon",
-            price: "7.500",
+            price: "8.000",
             ingredients: "Thon / Fromage / Sauce piquante",
           },
           {
             id: "sv2",
             name: "Salami",
-            price: "7.00",
+            price: "8.000",
             ingredients: "Salami / Fromage / Sauce piquante",
           },
           {
             id: "sv3",
             name: "Jambon",
-            price: "7.500",
+            price: "8.000",
             ingredients: "Jambon / Fromage / Sauce piquante",
           },
-          {
+{
             id: "sv4",
             name: "Escalope",
-            price: "7.500",
+            price: "10.500",
             ingredients: "Escalope / Fromage / Sauce piquante",
-          },
-          {
+          },{
             id: "sv5",
             name: "Tasty",
-            price: "7.500",
-            ingredients: "Jambon / Thon / Salami / Fromage / Sauce piquante",
+            price: "10.500",
+            ingredients: "Jambon / Salami / Thon / Fromage / Sauce piquante",
           },
         ],
       },
@@ -332,55 +327,39 @@ export const menuData = {
       },
       {
         id: "b2",
-        name: "Oreo",
-        price: "10.000",
-      },
-      {
-        id: "b3",
-        name: "Bubble Speculoos",
-        price: "10.000",
-      },
-      {
-        id: "b4",
-        name: "Bubble Fruits Secs",
-        price: "10.000",
-      },
-      {
-        id: "b5",
-        name: "Banane",
-        price: "10.000",
-      },
-      {
-        id: "b6",
         name: "Ice",
         price: "11.000",
       },
       {
+        id: "b3",
+        name: "Oreo",
+        price: "10.000",
+      },
+      {
+        id: "b4",
+        name: "Bubble Speculoos",
+        price: "10.000",
+      },
+      {
+        id: "b5",
+        name: "Bubble Fruits Secs",
+        price: "10.000",
+      },
+      {
+        id: "b6",
+        name: "Banane",
+        price: "10.000",
+      },
+      {
         id: "b7",
-        name: "Frerro Rocher",
-        price: "12.000",
-      },
-      {
-        id: "b8",
-        name: "Snickers",
-        price: "12.000",
-      },
-      {
-        id: "b9",
-        name: "Kinder Bueno",
-        price: "12.000",
-      },
-      {
-        id: "b10",
-        name: "Mars",
-        price: "12.000",
-      },
-      {
-        id: "b11",
         name: "Tasty",
         price: "15.000",
         ingredients:
-          "Chocolat / Fruits secs / Oreo / Speculoos / Ice / Supplément chocolat",
+          "Chocolat / Fruits secs / Oreo / Speculoos / Ice",
+      },{
+        id: "b8",
+        name: "Pistach",
+        price: "15.000",
       },
       {
         id: "b12",
@@ -407,21 +386,21 @@ export const menuData = {
         items: [
           {
             id: "ws1",
-            name: "Chocolat",
-            price: "7.000",
+            name: "Kids",
+            price: "7.500",
             ingredients: "Chocolat / Croquette / Chantilly",
           },
           {
             id: "ws2",
-            name: "Banane",
-            price: "10.000",
-            ingredients: "Chocolat / Banane / Chantilly",
+            name: "Ice",
+            price: "11.000",
+            ingredients: "Chocolat / 2 Boules Glaces / Chantilly",
           },
           {
             id: "ws3",
-            name: "Fruits Secs",
+            name: "Banane",
             price: "10.000",
-            ingredients: "Chocolat / Fruits secs / Chantilly",
+            ingredients: "Chocolat / Banane / Chantilly",
           },
           {
             id: "ws4",
@@ -440,38 +419,7 @@ export const menuData = {
             id: "ws6",
             name: "Oreo",
             price: "13.000",
-            ingredients:
-              "Chocolat / Boule Glace / Biscuit Oreo / Oreo / Chantilly",
-          },
-          {
-            id: "ws7",
-            name: "Pistache",
-            price: "13.000",
-            ingredients: "Chocolat / Boule Glace / Pistache / Chantilly",
-          },
-          {
-            id: "ws8",
-            name: "Frerro Rocher",
-            price: "15.000",
-            ingredients: "Chocolat / Boule Glace / Frerro Rocher / Chantilly",
-          },
-          {
-            id: "ws9",
-            name: "Snickers",
-            price: "15.000",
-            ingredients: "Chocolat / Boule Glace / Snickers / Chantilly",
-          },
-          {
-            id: "ws10",
-            name: "Kinder Bueno",
-            price: "15.000",
-            ingredients: "Chocolat / Boule Glace / Kinder Bueno / Chantilly",
-          },
-          {
-            id: "ws11",
-            name: "Mars",
-            price: "15.000",
-            ingredients: "Chocolat / Boule Glace / Mars / Chantilly",
+            ingredients: "Chocolat / Boule Glace / Biscuit Oreo / Chantilly",
           },
         ],
       },
@@ -495,6 +443,16 @@ export const menuData = {
             name: "Jambon",
             price: "8.000",
             ingredients: "Jambon / Fromage / Salade / Sauce piquante ",
+          },{
+            id: "wv4",
+            name: "Escalope",
+            price: "10.500",
+            ingredients: "Escalope / Fromage / Sauce piquante",
+          },{
+            id: "wv5",
+            name: "Tasty",
+            price: "10.500",
+            ingredients: "Jambon / Salami / Thon / Fromage / Sauce piquante",
           },
           {
             id: "wv4",
@@ -543,6 +501,11 @@ export const menuData = {
         name: "Malfouf Escalope",
         price: "8.000",
         ingredients: "Escalope / Fromage / Légumes grillés / Sauce piquante ",
+      },{
+        id: "m5",
+        name: "Malfouf Spécial",
+        price: "8.000",
+        ingredients: " Thon / Salami / Jambon / Fromage / Sauce piquante ",
       },
       {
         id: "m5",
@@ -585,16 +548,20 @@ export const menuData = {
         id: "r3",
         name: "Chocolat au choix",
         price: "8.000",
-      },
-      {
+      },{
         id: "r4",
-        name: "Pistache",
+        name: "Pistach",
         price: "9.500",
       },
       {
-        id: "r5",
+        id: "r4",
         name: "Yaourt Glacé Petit",
         price: "6.000",
+      },
+      {
+        id: "r5",
+        name: "Yaourt Glacé Grand",
+        price: "8.000",
       },
       {
         id: "r6",
@@ -619,11 +586,11 @@ export const menuData = {
         name: "Jus Citron",
         price: "4.500",
       },
-      {
-        id: "j2",
-        name: "Jus Orange",
-        price: "4.500",
-      },
+      // {
+      //   id: "j2",
+      //   name: "Jus Orange",
+      //   price: "4.500",
+      // },
       {
         id: "j3",
         name: "Jus Fraise",
@@ -708,12 +675,12 @@ export const menuData = {
         items: [
           {
             id: "js1",
-            name: "Kids",
-            price: "5.000",
+            name: "Oreo",
+            price: "9.000",
           },
           {
             id: "js2",
-            name: "Oreo",
+            name: "Speculoos",
             price: "9.000",
           },
           {
@@ -725,11 +692,6 @@ export const menuData = {
             id: "js4",
             name: "Chantilly",
             price: "9.000",
-          },
-          {
-            id: "js5",
-            name: "Nutella",
-            price: "10.000",
           },
         ],
       },
@@ -816,11 +778,6 @@ export const menuData = {
         price: "10.000",
       },
       {
-        id: "s6",
-        name: "Ice Cream",
-        price: "11.000",
-      },
-      {
         id: "s7",
         name: "Ferrero",
         price: "12.000",
@@ -831,19 +788,14 @@ export const menuData = {
         price: "12.000",
       },
       {
+        id: "s6",
+        name: "Tasty",
+        price: "15.000",
+      },
+      {
         id: "s9",
-        name: "Frrero Rocher",
-        price: "12.000",
-      },
-      {
-        id: "s10",
-        name: "Mars",
-        price: "12.000",
-      },
-      {
-        id: "s11",
-        name: "Bueno",
-        price: "12.000",
+        name: "Pistache",
+        price: "15.000",
       },
       {
         id: "s12",
@@ -899,26 +851,6 @@ export const menuData = {
         name: "Snickers",
         price: "9.500",
       },
-      {
-        id: "m8",
-        name: "Mars",
-        price: "9.500",
-      },
-      {
-        id: "m9",
-        name: "Kinder Bueno",
-        price: "9.500",
-      },
-      {
-        id: "m10",
-        name: "Frrero Rocher",
-        price: "9.500",
-      },
-      {
-        id: "m11",
-        name: "Pistache",
-        price: "10.000",
-      },
     ],
   },
   12: {
@@ -929,18 +861,18 @@ export const menuData = {
     items: [
       {
         id: "m1",
-        name: "Virgin",
-        price: "8.000",
-      },
-      {
-        id: "m2",
         name: "Bleu",
         price: "9.000",
       },
       {
-        id: "m3",
+        id: "m2",
         name: "Framboise",
         price: "9.000",
+      },
+      {
+        id: "m3",
+        name: "Virgin",
+        price: "8.000",
       },
     ],
   },

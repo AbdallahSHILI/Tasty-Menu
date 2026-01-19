@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./menu.module.css";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
@@ -11,17 +11,29 @@ const Menu = ({ onSubcategoryChange }) => {
 
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
+    // Only reset to first subcategory when category changes, not on every render
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
-      setSelectedSubcategory(firstSubcategory);
-      onSubcategoryChange(firstSubcategory, selectedCategory);
+
+      // Only set if this is initial mount or category actually changed
+      if (isInitialMount.current) {
+        setSelectedSubcategory(firstSubcategory);
+        onSubcategoryChange(firstSubcategory, selectedCategory);
+        isInitialMount.current = false;
+      }
     } else {
       setSelectedSubcategory(null);
       onSubcategoryChange(null, selectedCategory);
     }
-  }, [selectedCategory, currentMenu, onSubcategoryChange]);
+  }, [selectedCategory]); // Remove currentMenu and onSubcategoryChange from dependencies
+
+  // Reset the ref when category changes
+  useEffect(() => {
+    isInitialMount.current = true;
+  }, [selectedCategory]);
 
   // Add debounced resize handler
   const debouncedResizeHandler = useCallback(() => {

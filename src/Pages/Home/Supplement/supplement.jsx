@@ -8,9 +8,9 @@ const Supplement = ({ subcategory }) => {
 
   const supplements =
     subcategory === "sweet" || subcategory === "SweetOnly"
-      ? "Supplement Nutella = 3dt, Supplement Chocolat aux choix = 3dt"
+      ? "Supplement Nutella = 3dt, Supplement Chocolat aux choix = 3dt, Supplement Fruits Secs = 3dt"
       : subcategory === "savory" || subcategory === "SavoryOnly"
-        ? "Supplement Thon ou Salami ou Jambon = 1dt, Supplement Œuf = 1dt, SupplementFromage Arbi = 2dt"
+        ? "Supplement Thon ou Salami ou Jambon = 2dt, Supplement Œuf = 1dt, SupplementFromage Arbi = 2dt"
         : null;
 
   if (!supplements) {

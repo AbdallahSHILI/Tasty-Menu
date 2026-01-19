@@ -151,6 +151,11 @@ export const menuData = {
             name: "Pistache",
             price: "15.000",
           },
+          {
+            id: "s11",
+            name: "Pistache",
+            price: "15.000",
+          },
         ],
       },
       savory: {
@@ -221,7 +226,7 @@ export const menuData = {
           {
             id: "s2",
             name: "Fruits Secs",
-            price: "9.000",
+            price: "10.000",
           },
           {
             id: "s3",
@@ -256,6 +261,17 @@ export const menuData = {
           },
           {
             id: "s9",
+            name: "Pistache",
+            price: "15.000",
+          },
+          {
+            id: "s10",
+            name: "Tasty",
+            price: "13.000",
+            ingredients: "Chocolat / Banane / Fruits secs / Chantilly",
+          },
+          {
+            id: "s11",
             name: "Pistache",
             price: "15.000",
           },
@@ -345,6 +361,11 @@ export const menuData = {
         name: "Pistach",
         price: "15.000",
       },
+      {
+        id: "b12",
+        name: "Pistach",
+        price: "15.000",
+      },
     ],
   },
   4: {
@@ -383,13 +404,19 @@ export const menuData = {
           },
           {
             id: "ws4",
-            name: "Speculoos",
-            price: "13.000",
-            ingredients:
-              "Chocolat / Boule Glace / Biscuit speculoos / Caramel / Chantilly",
+            name: "Ice",
+            price: "11.000",
+            ingredients: "Chocolat / 2 Boules Glaces / Chantilly",
           },
           {
             id: "ws5",
+            name: "Speculoos",
+            price: "13.000",
+            ingredients:
+              "Chocolat / Boule Glace / Biscuit speculoos / Caramel / Speculoos / Chantilly",
+          },
+          {
+            id: "ws6",
             name: "Oreo",
             price: "13.000",
             ingredients: "Chocolat / Boule Glace / Biscuit Oreo / Chantilly",
@@ -426,6 +453,19 @@ export const menuData = {
             name: "Tasty",
             price: "10.500",
             ingredients: "Jambon / Salami / Thon / Fromage / Sauce piquante",
+          },
+          {
+            id: "wv4",
+            name: "Escalope",
+            price: "10.0+500",
+            ingredients: "Escalope / Fromage / Salade / Sauce piquante ",
+          },
+          {
+            id: "wv5",
+            name: "Tasty",
+            price: "10.500",
+            ingredients:
+              "Jambon / Thon / Salami / Fromage / Salade / Sauce piquante ",
           },
         ],
       },
@@ -469,6 +509,12 @@ export const menuData = {
       },
       {
         id: "m5",
+        name: "Malfouf Spéciale",
+        price: "8.000",
+        ingredients: "Thon / Salami / Jambon / Fromage / Sauce piquante ",
+      },
+      {
+        id: "m6",
         name: "Omelette",
         price: "8.000",
       },
@@ -519,6 +565,11 @@ export const menuData = {
       },
       {
         id: "r6",
+        name: "Yaourt Glacé Grand",
+        price: "8.000",
+      },
+      {
+        id: "r7",
         name: "Chocolat Glacé/Chaud",
         price: "7.000",
       },
@@ -634,6 +685,11 @@ export const menuData = {
           },
           {
             id: "js3",
+            name: "Speculoos",
+            price: "9.000",
+          },
+          {
+            id: "js4",
             name: "Chantilly",
             price: "9.000",
           },
@@ -674,7 +730,17 @@ export const menuData = {
       },
       {
         id: "c6",
-        name: "café glacé",
+        name: "Café Glacé",
+        price: "7.000",
+      },
+      {
+        id: "c7",
+        name: "Café Glacé Caramel",
+        price: "7.000",
+      },
+      {
+        id: "c8",
+        name: "Café Glacé Vanille",
         price: "7.000",
       },
     ],
@@ -728,6 +794,16 @@ export const menuData = {
       },
       {
         id: "s9",
+        name: "Pistache",
+        price: "15.000",
+      },
+      {
+        id: "s12",
+        name: "Tasty",
+        price: "15.000",
+      },
+      {
+        id: "s13",
         name: "Pistache",
         price: "15.000",
       },

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./categoryPage.module.css";
-import { useMenu } from "../../context/MenuContext";
 import { menuData } from "../../data/menuData";
 import { useNavigate } from "react-router-dom";
 import GalerieIcon from "../../Components/Assets/Galerie.svg";
@@ -28,7 +27,6 @@ const CategoryPage = ({ category }) => {
     : null;
   const [activeSubcategory, setActiveSubcategory] =
     useState(defaultSubcategory);
-  const [activeFilter, setActiveFilter] = useState(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
   if (!currentMenu) return null;
@@ -54,7 +52,6 @@ const CategoryPage = ({ category }) => {
   const handleSubcategoryChange = (subcategory) => {
     setActiveSubcategory(subcategory);
     setSelectedSubcategory(subcategory);
-    setActiveFilter(null);
   };
 
   const shouldShowSupplement = () => {
@@ -70,7 +67,7 @@ const CategoryPage = ({ category }) => {
     // Then check for subcategories (sweet/savory toggle)
     if (currentMenu?.subcategories && selectedSubcategory) {
       return ["sweet", "savory", "sucré", "salé"].includes(
-        selectedSubcategory.toLowerCase()
+        selectedSubcategory.toLowerCase(),
       );
     }
 
@@ -139,12 +136,12 @@ const CategoryPage = ({ category }) => {
             menuData[categoryId]?.subcat === "SweetOnly"
               ? "sweet"
               : menuData[categoryId]?.subcat === "SavoryOnly"
-              ? "savory"
-              : selectedSubcategory?.toLowerCase() === "sucré"
-              ? "sweet"
-              : selectedSubcategory?.toLowerCase() === "salé"
-              ? "savory"
-              : selectedSubcategory
+                ? "savory"
+                : selectedSubcategory?.toLowerCase() === "sucré"
+                  ? "sweet"
+                  : selectedSubcategory?.toLowerCase() === "salé"
+                    ? "savory"
+                    : selectedSubcategory
           }
         />
       )}

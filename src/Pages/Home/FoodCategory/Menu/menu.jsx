@@ -21,7 +21,7 @@ const Menu = ({ onSubcategoryChange }) => {
       setSelectedSubcategory(null);
       onSubcategoryChange(null, selectedCategory);
     }
-  }, [selectedCategory, currentMenu]);
+  }, [selectedCategory, currentMenu, onSubcategoryChange]);
 
   // Add debounced resize handler
   const debouncedResizeHandler = useCallback(() => {
@@ -87,7 +87,7 @@ const Menu = ({ onSubcategoryChange }) => {
       {currentMenu.subcategories && (
         <div className={styles.filterContainer}>
           {["sweet", "savory", "chocolat", "naturel", "other"].includes(
-            selectedSubcategory
+            selectedSubcategory,
           ) &&
             Object.keys(currentMenu.subcategories).length > 1 && (
               <div className={styles.toggleWrapper}>
@@ -102,7 +102,7 @@ const Menu = ({ onSubcategoryChange }) => {
                     >
                       {subcategory.title}
                     </button>
-                  )
+                  ),
                 )}
               </div>
             )}

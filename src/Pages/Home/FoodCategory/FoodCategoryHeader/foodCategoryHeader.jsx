@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./foodCategoryHeader.module.css";
-import seeMoreIcon from "../../../../Components/Assets/SeeMoreIcon.svg";
 
 const foodCategoryHeader = () => {
   return (

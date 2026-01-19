@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./navbar.module.css";
-import PositionIcon from "../Assets/Position.svg";
-import IceCreamIcon from "../Assets/Navbar_Ice_Cream.svg";
 import MenuIcon from "../Assets/Menu.svg";
 import SocialMedia from "./SocialMedia/socialMedia";
 

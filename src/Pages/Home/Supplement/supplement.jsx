@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./supplement.module.css";
-import { menuData } from "../../../data/menuData";
 
 const Supplement = ({ subcategory }) => {
   if (!subcategory) {
@@ -11,8 +10,8 @@ const Supplement = ({ subcategory }) => {
     subcategory === "sweet" || subcategory === "SweetOnly"
       ? "Supplement Nutella = 3dt, Supplement Chocolat aux choix = 3dt"
       : subcategory === "savory" || subcategory === "SavoryOnly"
-      ? "Supplement Thon ou Salami ou Jambon ou Œuf = 1dt, Fromage Arbi = 2dt"
-      : null;
+        ? "Supplement Thon ou Salami ou Jambon = 1dt, Supplement Œuf = 1dt, SupplementFromage Arbi = 2dt"
+        : null;
 
   if (!supplements) {
     return null; // Subcategory does not match "sweet" or "savory", display nothing

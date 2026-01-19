@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styles from "./home.module.css";
 import { HomeHeader, FoodCategory, Menu, Supplement } from "../index";
 import { menuData } from "../../data/menuData";
@@ -6,6 +6,12 @@ import { menuData } from "../../data/menuData";
 const Home = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [categoryId, setCategoryId] = useState(null);
+
+  // Wrap in useCallback to prevent recreation on every render
+  const handleSubcategoryChange = useCallback((subcategory, category) => {
+    setSelectedSubcategory(subcategory);
+    setCategoryId(category);
+  }, []); // Empty dependency array since we're only using setters
 
   const shouldShowSupplement = () => {
     if (!categoryId) return false;
@@ -29,12 +35,7 @@ const Home = () => {
     <div className={styles.container}>
       <HomeHeader />
       <FoodCategory />
-      <Menu
-        onSubcategoryChange={(subcategory, category) => {
-          setSelectedSubcategory(subcategory);
-          setCategoryId(category);
-        }}
-      />
+      <Menu onSubcategoryChange={handleSubcategoryChange} />
       {shouldShowSupplement() && (
         <Supplement
           subcategory={
@@ -42,8 +43,8 @@ const Home = () => {
             (menuData[categoryId]?.subcat === "SweetOnly"
               ? "sweet"
               : menuData[categoryId]?.subcat === "SavoryOnly"
-              ? "savory"
-              : null)
+                ? "savory"
+                : null)
           }
         />
       )}

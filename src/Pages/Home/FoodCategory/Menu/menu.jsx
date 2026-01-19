@@ -11,29 +11,28 @@ const Menu = ({ onSubcategoryChange }) => {
 
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isInitialMount = useRef(true);
+  const prevCategoryRef = useRef(selectedCategory);
 
   useEffect(() => {
-    // Only reset to first subcategory when category changes, not on every render
+    // Check if category actually changed
+    const categoryChanged = prevCategoryRef.current !== selectedCategory;
+
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
 
-      // Only set if this is initial mount or category actually changed
-      if (isInitialMount.current) {
+      // Only reset to first subcategory when switching categories
+      if (categoryChanged) {
         setSelectedSubcategory(firstSubcategory);
         onSubcategoryChange(firstSubcategory, selectedCategory);
-        isInitialMount.current = false;
       }
     } else {
       setSelectedSubcategory(null);
       onSubcategoryChange(null, selectedCategory);
     }
-  }, [selectedCategory]); // Remove currentMenu and onSubcategoryChange from dependencies
 
-  // Reset the ref when category changes
-  useEffect(() => {
-    isInitialMount.current = true;
-  }, [selectedCategory]);
+    // Update ref to current category
+    prevCategoryRef.current = selectedCategory;
+  }, [selectedCategory, currentMenu, onSubcategoryChange]);
 
   // Add debounced resize handler
   const debouncedResizeHandler = useCallback(() => {

@@ -795,12 +795,12 @@ export const menuData = {
         price: "10.000",
       },
       {
-        id: "s7",
+        id: "s6",
         name: "Ferrero",
         price: "12.000",
       },
       {
-        id: "s8",
+        id: "s7",
         name: "Snickers",
         price: "12.000",
       },
@@ -810,17 +810,17 @@ export const menuData = {
         price: "12.000",
       },
       {
-        id: "s8",
+        id: "s9",
         name: "Mars",
         price: "12.000",
       },
       {
-        id: "s6",
+        id: "s10",
         name: "Tasty",
         price: "15.000",
       },
       {
-        id: "s9",
+        id: "s11",
         name: "Pistache",
         price: "15.000",
       },

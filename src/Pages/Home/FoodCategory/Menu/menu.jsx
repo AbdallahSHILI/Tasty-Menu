@@ -20,8 +20,8 @@ const Menu = ({ onSubcategoryChange }) => {
     if (currentMenu?.subcategories) {
       const firstSubcategory = Object.keys(currentMenu.subcategories)[0];
 
-      // Only reset to first subcategory when switching categories
-      if (categoryChanged) {
+      // Reset to first subcategory when switching categories OR on initial mount
+      if (categoryChanged || selectedSubcategory === null) {
         setSelectedSubcategory(firstSubcategory);
         onSubcategoryChange(firstSubcategory, selectedCategory);
       }
@@ -32,7 +32,7 @@ const Menu = ({ onSubcategoryChange }) => {
 
     // Update ref to current category
     prevCategoryRef.current = selectedCategory;
-  }, [selectedCategory, currentMenu, onSubcategoryChange]);
+  }, [selectedCategory, currentMenu, onSubcategoryChange, selectedSubcategory]);
 
   // Add debounced resize handler
   const debouncedResizeHandler = useCallback(() => {

@@ -27,6 +27,7 @@ import Mojito from "../Components/Assets/Mojito.svg";
 import CrepeImage1 from "../Components/Assets/Crepe_img_1.webp";
 import CrepeImage2 from "../Components/Assets/Crepe_img_2.webp";
 import CrepeImage3 from "../Components/Assets/Crepe_img_3.webp";
+import CrepeImage4 from "../Components/Assets/Crepe_Thon.jpg";
 
 import GaufreImage1 from "../Components/Assets/Gauffre_img_1.webp";
 import GaufreImage2 from "../Components/Assets/Gauffre_img_2.webp";
@@ -79,6 +80,7 @@ import MilkshakeImage3 from "../Components/Assets/Milkshake_img_3.webp";
 import MojitoImage1 from "../Components/Assets/Mojito_img_1.webp";
 import MojitoImage2 from "../Components/Assets/Mojito_img_2.webp";
 import MojitoImage3 from "../Components/Assets/Mojito_img_3.webp";
+import MojitoImage4 from "../Components/Assets/Mojitou_Red.jpg";
 
 export const iconMap = {
   1: Crepe,
@@ -100,7 +102,7 @@ export const menuData = {
     category: "Crêpe",
     icon: iconMap[1],
     headerImage: CrepeHeader,
-    ModalImages: [CrepeImage1, CrepeImage2, CrepeImage3],
+    ModalImages: [CrepeImage1, CrepeImage2, CrepeImage3, CrepeImage4],
     subcategories: {
       sweet: {
         title: "Sucrée",
@@ -598,11 +600,11 @@ export const menuData = {
         name: "Jus Citron",
         price: "4.500",
       },
-      {
-        id: "j2",
-        name: "Jus Orange",
-        price: "4.500",
-      },
+      // {
+      //   id: "j2",
+      //   name: "Jus Orange",
+      //   price: "4.500",
+      // },
       {
         id: "j3",
         name: "Jus Fraise",
@@ -884,7 +886,7 @@ export const menuData = {
     category: "Mojito",
     icon: iconMap[12],
     headerImage: MojitoHeader,
-    ModalImages: [MojitoImage1, MojitoImage2, MojitoImage3],
+    ModalImages: [MojitoImage1, MojitoImage2, MojitoImage3, MojitoImage4],
     items: [
       {
         id: "m1",

@@ -6,6 +6,8 @@ import Waffle from "../Components/Assets/Waffle.svg";
 import Jus from "../Components/Assets/Boissons.svg";
 import IceCream from "../Components/Assets/Ice_Cream.svg";
 import Malfouf from "../Components/Assets/Malfouf.svg";
+import Omlette from "../Components/Assets/Omlette.svg";
+import OmeletteHeader from "../Components/Assets/omeletteHeader.avif";
 import Jwajem from "../Components/Assets/Jwajem.svg";
 import CrepeHeader from "../Components/Assets/Crepe_img.webp";
 import GaufreHeader from "../Components/Assets/Gauffre_img.webp";
@@ -49,6 +51,10 @@ import MalfoufImage2 from "../Components/Assets/Malfouf_img_2.webp";
 import MalfoufImage3 from "../Components/Assets/Malfouf_img_3.webp";
 import MalfoufImage4 from "../Components/Assets/Malfouf_img_4.webp";
 
+import OmeletteImage1 from "../Components/Assets/omelette1.jpg";
+import OmeletteImage2 from "../Components/Assets/omelette2.jpg";
+import OmeletteImage3 from "../Components/Assets/omelette3.jpg";
+
 import IceCreamImage1 from "../Components/Assets/IceCream_img_1.webp";
 import IceCreamImage2 from "../Components/Assets/IceCream_img_2.webp";
 import IceCreamImage3 from "../Components/Assets/IceCream_img_3.webp";
@@ -88,13 +94,14 @@ export const iconMap = {
   3: Bubble,
   4: Waffle,
   5: Malfouf,
-  6: IceCream,
-  7: Jus,
-  8: Jwajem,
-  9: Café,
-  10: Pancake,
-  11: Milkshake,
-  12: Mojito,
+  6: Omlette,
+  7: IceCream,
+  8: Jus,
+  9: Jwajem,
+  10: Café,
+  11: Pancake,
+  12: Milkshake,
+  13: Mojito,
 };
 
 export const menuData = {
@@ -531,16 +538,44 @@ export const menuData = {
         price: "8.000",
         ingredients: " Thon / Salami / Jambon / Fromage / Sauce piquante ",
       },
-      {
-        id: "m6",
-        name: "Omelette",
-        price: "8.000",
-      },
     ],
   },
   6: {
+    category: "Omelette",
+    icon: iconMap[6], // add an Omelette icon import + map entry if you have one
+    headerImage: OmeletteHeader, // add an Omelette header image import if you have one
+    ModalImages: [OmeletteImage1, OmeletteImage2, OmeletteImage3], // add Omelette images if available
+    items: [
+      {
+        id: "o1",
+        name: "Thon",
+        price: "8.000",
+      },
+      {
+        id: "o2",
+        name: "Salami",
+        price: "8.000",
+      },
+      {
+        id: "o3",
+        name: "Jambon",
+        price: "8.000",
+      },
+      {
+        id: "o4",
+        name: "Escalope",
+        price: "10.500",
+      },
+      {
+        id: "o5",
+        name: "Spéciale",
+        price: "10.500",
+      },
+    ],
+  },
+  7: {
     category: "Ice_Cream",
-    icon: iconMap[6],
+    icon: iconMap[7],
     headerImage: IceCreamHeader,
     ModalImages: [
       IceCreamImage1,
@@ -589,9 +624,9 @@ export const menuData = {
       },
     ],
   },
-  7: {
+  8: {
     category: "Jus",
-    icon: iconMap[7],
+    icon: iconMap[8],
     headerImage: JusHeader,
     ModalImages: [JusImage1, JusImage2, JusImage3],
     items: [
@@ -637,9 +672,9 @@ export const menuData = {
       },
     ],
   },
-  8: {
+  9: {
     category: "Jwajem",
-    icon: iconMap[8],
+    icon: iconMap[9],
     headerImage: JwajemHeader,
     ModalImages: [JwajemImage1, JwajemImage2, JwajemImage3],
     subcat: "SweetOnly",
@@ -716,9 +751,9 @@ export const menuData = {
       },
     },
   },
-  9: {
+  10: {
     category: "Café",
-    icon: iconMap[9],
+    icon: iconMap[10],
     headerImage: CafeHeader,
     ModalImages: [CafeImage1, CafeImage2, CafeImage3, CafeImage4],
     items: [
@@ -764,9 +799,9 @@ export const menuData = {
       },
     ],
   },
-  10: {
+  11: {
     category: "Pancake",
-    icon: iconMap[10],
+    icon: iconMap[11],
     headerImage: PancakeHeader,
     ModalImages: [PancakeImage1, PancakeImage2, PancakeImage3],
     subcat: "SweetOnly",
@@ -828,7 +863,7 @@ export const menuData = {
       },
     ],
   },
-  11: {
+  12: {
     category: "Milkshake",
     icon: iconMap[11],
     headerImage: MilkshakeHeader,
@@ -882,9 +917,9 @@ export const menuData = {
       },
     ],
   },
-  12: {
+  13: {
     category: "Mojito",
-    icon: iconMap[12],
+    icon: iconMap[13],
     headerImage: MojitoHeader,
     ModalImages: [MojitoImage1, MojitoImage2, MojitoImage3, MojitoImage4],
     items: [

@@ -865,7 +865,7 @@ export const menuData = {
   },
   12: {
     category: "Milkshake",
-    icon: iconMap[11],
+    icon: iconMap[12],
     headerImage: MilkshakeHeader,
     ModalImages: [MilkshakeImage1, MilkshakeImage2, MilkshakeImage3],
     subcat: "SweetOnly",

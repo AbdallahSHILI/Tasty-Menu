@@ -24,6 +24,8 @@ import Milkshake from "../Components/Assets/Milkshake.svg";
 import MilkshakeHeader from "../Components/Assets/Milkshake_img.webp";
 import MojitoHeader from "../Components/Assets/Mojito.webp";
 import Mojito from "../Components/Assets/Mojito.svg";
+import GraniteHeader from "../Components/Assets/granit_img.jpg";
+import Granite from "../Components/Assets/Granite.svg";
 
 // Import additional images for Modal
 import CrepeImage1 from "../Components/Assets/Crepe_img_1.webp";
@@ -88,6 +90,10 @@ import MojitoImage2 from "../Components/Assets/Mojito_img_2.webp";
 import MojitoImage3 from "../Components/Assets/Mojito_img_3.webp";
 import MojitoImage4 from "../Components/Assets/Mojitou_Red.jpg";
 
+import GraniteImage1 from "../Components/Assets/granit_img.jpg";
+import GraniteImage2 from "../Components/Assets/granite_img2.avif";
+import GraniteImage3 from "../Components/Assets/granite_img3.avif";
+
 export const iconMap = {
   1: Crepe,
   2: Gaufre,
@@ -102,6 +108,7 @@ export const iconMap = {
   11: Pancake,
   12: Milkshake,
   13: Mojito,
+  14: Granite,
 };
 
 export const menuData = {
@@ -937,6 +944,29 @@ export const menuData = {
         id: "m3",
         name: "Framboise",
         price: "9.000",
+      },
+    ],
+  },
+  14: {
+    category: "Granite",
+    icon: iconMap[14],
+    headerImage: GraniteHeader,
+    ModalImages: [GraniteImage1, GraniteImage2, GraniteImage3],
+    items: [
+      {
+        id: "Gr1",
+        name: "Kiwi",
+        price: "3.500",
+      },
+      {
+        id: "Gr2",
+        name: "Mangue",
+        price: "3.500",
+      },
+      {
+        id: "Gr3",
+        name: "Kiwi & Mangue",
+        price: "3.500",
       },
     ],
   },

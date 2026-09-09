@@ -6,11 +6,15 @@ const SWIPE_THRESHOLD = 50;
 
 const FoodPic = ({ images, title, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const touchStartX = useRef(null);
+  const hasMoved = useRef(false);
 
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0);
+      setDragOffset(0);
     }
   }, [isOpen, images]);
 
@@ -30,18 +34,33 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
+    hasMoved.current = false;
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.touches[0].clientX - touchStartX.current;
+    hasMoved.current = true;
+    setDragOffset(deltaX);
   };
 
   const handleTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    setIsDragging(false);
 
-    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
-      deltaX > 0 ? goToPrev() : goToNext();
-    } else {
-      onClose(); // small movement = tap, close like before
+    if (!hasMoved.current) {
+      onClose(); // pure tap, no drag at all
+      touchStartX.current = null;
+      setDragOffset(0);
+      return;
     }
 
+    if (Math.abs(dragOffset) > SWIPE_THRESHOLD) {
+      dragOffset > 0 ? goToPrev() : goToNext();
+    }
+
+    // snap back to center either way — new image (if changed) settles in from 0
+    setDragOffset(0);
     touchStartX.current = null;
   };
 
@@ -51,6 +70,7 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
         className={style.modalContent}
         onClick={(e) => e.stopPropagation()}
         onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
         <div
@@ -64,11 +84,16 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
         </div>
 
         {title && <h2 className={style.title}>{title}</h2>}
+
         <img
           src={images[currentIndex]}
           alt={`Food ${currentIndex + 1}`}
           className={style.image}
           draggable={false}
+          style={{
+            transform: `translateX(${dragOffset}px)`,
+            transition: isDragging ? "none" : "transform 0.25s ease",
+          }}
         />
 
         {images.length > 1 && (

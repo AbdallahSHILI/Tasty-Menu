@@ -29,6 +29,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
+  animation: fadeSlideIn 0.35s ease;
 }
 
 .menuItem {
@@ -36,7 +37,9 @@
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .menuItem:hover {
@@ -54,8 +57,8 @@
 .itemName {
   font-size: 1.4rem;
   font-weight: 700;
-  font-family: "Dancing Script", "Brush Script MT", "Lucida Handwriting",
-    cursive;
+  font-family:
+    "Dancing Script", "Brush Script MT", "Lucida Handwriting", cursive;
   color: #333;
   margin: 0;
   text-align: left;
@@ -227,4 +230,35 @@
     padding: 6px 10px;
     font-size: 0.85rem;
   }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tastyItem {
+  border: 1px solid #d4af37;
+  background: linear-gradient(135deg, #fffdf5, #fff9e6);
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.25);
+}
+
+.tastyItem:hover {
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.35);
+}
+
+.tastyName {
+  color: #b8860b;
+}
+
+.tastyBadge {
+  color: #d4af37;
+  margin-left: 6px;
+  font-size: 1rem;
 }

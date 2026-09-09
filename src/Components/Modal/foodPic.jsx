@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import style from "./foodPic.module.css";
-import flech from "../Assets/Flech-Right.svg";
 import Close from "../Assets/Close.svg";
 
-const FoodPic = ({ images, isOpen, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const SWIPE_THRESHOLD = 50;
 
-  // Reset currentIndex whenever modal is opened or images change
+const FoodPic = ({ images, title, isOpen, onClose }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(null);
+
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(0);
@@ -15,24 +16,43 @@ const FoodPic = ({ images, isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const handlePrevClick = (e) => {
-    e.stopPropagation();
+  const goToPrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
 
-  const handleNextClick = (e) => {
-    e.stopPropagation();
+  const goToNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      deltaX > 0 ? goToPrev() : goToNext();
+    } else {
+      onClose(); // small movement = tap, close like before
+    }
+
+    touchStartX.current = null;
   };
 
   return (
     <div className={style.modalOverlay} onClick={onClose}>
-      <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
-        {/* Close icon button */}
+      <div
+        className={style.modalContent}
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className={style.closeButtonWrapper}
           onClick={(e) => {
@@ -43,32 +63,26 @@ const FoodPic = ({ images, isOpen, onClose }) => {
           <img src={Close} alt="Close" className={style.closeButton} />
         </div>
 
-        <div className={style.navigationButtons} onClick={onClose}>
-          <img
-            src={flech}
-            alt="Previous"
-            className={`${style.arrowButton} ${style.leftArrow}`}
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrevClick(e);
-            }}
-          />
-          <img
-            src={images[currentIndex]}
-            alt={`Food ${currentIndex + 1}`}
-            className={style.image}
-            onClick={onClose} // Close modal on image click
-          />
-          <img
-            src={flech}
-            alt="Next"
-            className={`${style.arrowButton} ${style.rightArrow}`}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleNextClick(e);
-            }}
-          />
-        </div>
+        {title && <h2 className={style.title}>{title}</h2>}
+        <img
+          src={images[currentIndex]}
+          alt={`Food ${currentIndex + 1}`}
+          className={style.image}
+          draggable={false}
+        />
+
+        {images.length > 1 && (
+          <div className={style.dots}>
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={`${style.dot} ${
+                  index === currentIndex ? style.dotActive : ""
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

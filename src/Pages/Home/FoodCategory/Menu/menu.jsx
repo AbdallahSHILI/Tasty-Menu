@@ -65,19 +65,31 @@ const Menu = ({ onSubcategoryChange }) => {
   };
 
   const renderMenuItems = (items) => {
-    return items.map((item) => (
-      <div key={item.id} className={styles.menuItem}>
-        <div className={styles.itemHeader}>
-          <h3 className={`${styles.itemName} notranslate`} translate="no">
-            {item.name}
-          </h3>
-          <span className={styles.price}>{item.price}</span>
+    return items.map((item) => {
+      const isTasty = item.name === "Tasty";
+      return (
+        <div
+          key={item.id}
+          className={`${styles.menuItem} ${isTasty ? styles.tastyItem : ""}`}
+        >
+          <div className={styles.itemHeader}>
+            <h3
+              className={`${styles.itemName} ${
+                isTasty ? styles.tastyName : ""
+              } notranslate`}
+              translate="no"
+            >
+              {item.name}
+              {isTasty && <span className={styles.tastyBadge}>★</span>}
+            </h3>
+            <span className={styles.price}>{item.price}</span>
+          </div>
+          {item.ingredients && (
+            <p className={styles.ingredients}>{item.ingredients}</p>
+          )}
         </div>
-        {item.ingredients && (
-          <p className={styles.ingredients}>{item.ingredients}</p>
-        )}
-      </div>
-    ));
+      );
+    });
   };
 
   const currentSubcategoryItems =
@@ -120,7 +132,10 @@ const Menu = ({ onSubcategoryChange }) => {
         </div>
       )}
 
-      <div className={styles.menuItems}>
+      <div
+        key={selectedSubcategory ?? selectedCategory}
+        className={styles.menuItems}
+      >
         {currentMenu.subcategories
           ? currentSubcategoryItems && renderMenuItems(currentSubcategoryItems)
           : renderMenuItems(currentMenu.items)}
@@ -128,6 +143,7 @@ const Menu = ({ onSubcategoryChange }) => {
 
       <FoodPic
         images={currentMenu.ModalImages}
+        title={currentMenu.category}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />

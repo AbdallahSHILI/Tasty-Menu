@@ -37,9 +37,8 @@ import GaufreImage1 from "../Components/Assets/Gauffre_img_1.webp";
 import GaufreImage2 from "../Components/Assets/Gauffre_img_2.webp";
 import GaufreImage3 from "../Components/Assets/Gauffre_img_3.webp";
 
-import BubbleImage1 from "../Components/Assets/Gauffre_img_1.webp";
-import BubbleImage2 from "../Components/Assets/Gauffre_img_2.webp";
-import BubbleImage3 from "../Components/Assets/Gauffre_img_3.webp";
+import BubbleImage1 from "../Components/Assets/Bubbles_2.jpg";
+import BubbleImage2 from "../Components/Assets/Bubbles_1.jpg";
 
 import WaffleImage1 from "../Components/Assets/Waffle_Sucré_img_1.webp";
 import WaffleImage2 from "../Components/Assets/Waffle_Sucré_img_2.webp";
@@ -338,7 +337,7 @@ export const menuData = {
     category: "Bubbles",
     icon: iconMap[3],
     headerImage: BubbleHeader,
-    ModalImages: [BubbleImage1, BubbleImage2, BubbleImage3],
+    ModalImages: [BubbleImage1, BubbleImage2],
     subcat: "SweetOnly",
     items: [
       {

@@ -7,7 +7,6 @@ const SWIPE_THRESHOLD = 50;
 const FoodPic = ({ images, title, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
   const [pendingStep, setPendingStep] = useState(0); // -1 = prev, 1 = next, 0 = cancel
   const touchStartX = useRef(null);
@@ -30,7 +29,6 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
     if (images.length < 2) return;
     touchStartX.current = e.touches[0].clientX;
     hasMoved.current = false;
-    setIsDragging(true);
   };
 
   const handleTouchMove = (e) => {
@@ -41,8 +39,6 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
   };
 
   const handleTouchEnd = () => {
-    setIsDragging(false);
-
     if (!hasMoved.current) {
       onClose(); // pure tap, unchanged behavior
       touchStartX.current = null;

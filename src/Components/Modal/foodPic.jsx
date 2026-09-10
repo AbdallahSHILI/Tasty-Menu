@@ -8,6 +8,8 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isSnapping, setIsSnapping] = useState(false);
+  const [pendingStep, setPendingStep] = useState(0); // -1 = prev, 1 = next, 0 = cancel
   const touchStartX = useRef(null);
   const hasMoved = useRef(false);
 
@@ -15,24 +17,17 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
     if (isOpen) {
       setCurrentIndex(0);
       setDragOffset(0);
+      setIsSnapping(false);
     }
   }, [isOpen, images]);
 
   if (!isOpen) return null;
 
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1,
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1,
-    );
-  };
+  const getPrevIndex = (idx) => (idx === 0 ? images.length - 1 : idx - 1);
+  const getNextIndex = (idx) => (idx === images.length - 1 ? 0 : idx + 1);
 
   const handleTouchStart = (e) => {
+    if (images.length < 2) return;
     touchStartX.current = e.touches[0].clientX;
     hasMoved.current = false;
     setIsDragging(true);
@@ -45,34 +40,58 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
     setDragOffset(deltaX);
   };
 
-  const handleTouchEnd = (e) => {
+  const handleTouchEnd = () => {
     setIsDragging(false);
 
     if (!hasMoved.current) {
-      onClose(); // pure tap, no drag at all
+      onClose(); // pure tap, unchanged behavior
       touchStartX.current = null;
-      setDragOffset(0);
       return;
     }
 
-    if (Math.abs(dragOffset) > SWIPE_THRESHOLD) {
-      dragOffset > 0 ? goToPrev() : goToNext();
+    if (dragOffset > SWIPE_THRESHOLD) {
+      setPendingStep(-1); // finish revealing prev
+    } else if (dragOffset < -SWIPE_THRESHOLD) {
+      setPendingStep(1); // finish revealing next
+    } else {
+      setPendingStep(0); // snap back, nothing changes
     }
-
-    // snap back to center either way — new image (if changed) settles in from 0
-    setDragOffset(0);
+    setIsSnapping(true);
     touchStartX.current = null;
   };
 
+  const handleTransitionEnd = () => {
+    if (!isSnapping) return;
+
+    if (pendingStep === 1) setCurrentIndex((idx) => getNextIndex(idx));
+    else if (pendingStep === -1) setCurrentIndex((idx) => getPrevIndex(idx));
+
+    setIsSnapping(false);
+    setDragOffset(0);
+  };
+
+  let translate;
+  if (isSnapping) {
+    translate =
+      pendingStep === 1 ? "-200%" : pendingStep === -1 ? "0%" : "-100%";
+  } else {
+    translate = `calc(-100% + ${dragOffset}px)`;
+  }
+
+  const trackStyle = {
+    transform: `translateX(${translate})`,
+    transition: isSnapping ? "transform 0.28s ease" : "none",
+  };
+
+  const slides = [
+    images[getPrevIndex(currentIndex)],
+    images[currentIndex],
+    images[getNextIndex(currentIndex)],
+  ];
+
   return (
     <div className={style.modalOverlay} onClick={onClose}>
-      <div
-        className={style.modalContent}
-        onClick={(e) => e.stopPropagation()}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
         <div
           className={style.closeButtonWrapper}
           onClick={(e) => {
@@ -85,16 +104,29 @@ const FoodPic = ({ images, title, isOpen, onClose }) => {
 
         {title && <h2 className={style.title}>{title}</h2>}
 
-        <img
-          src={images[currentIndex]}
-          alt={`Food ${currentIndex + 1}`}
-          className={style.image}
-          draggable={false}
-          style={{
-            transform: `translateX(${dragOffset}px)`,
-            transition: isDragging ? "none" : "transform 0.25s ease",
-          }}
-        />
+        <div
+          className={style.imageViewport}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div
+            className={style.imageTrack}
+            style={trackStyle}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {slides.map((src, i) => (
+              <div className={style.imageSlide} key={i}>
+                <img
+                  src={src}
+                  alt={`Food ${i}`}
+                  className={style.image}
+                  draggable={false}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {images.length > 1 && (
           <div className={style.dots}>

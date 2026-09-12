@@ -94,7 +94,7 @@ body {
 @media screen and (max-width: 768px) {
   .categories {
     gap: 10px;
-    padding: 100px 0 10px; /* enough clearance so the overlay isn't clipped by the scroll box */
+    padding: 48px 0 10px; /* enough clearance so the overlay isn't clipped by the scroll box */
   }
 
   .categoryItem {

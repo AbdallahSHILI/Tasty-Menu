@@ -1,16 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./mainFood.module.css";
 import { Lottie } from "lottie-react";
-import chefAnimation from "../../../../Components/Assets/animations/chef.json"; // adjust path
+import chefAnimation from "../../../../Components/Assets/animations/chef.json";
 import { useMenu } from "../../../../context/MenuContext";
 import { menuData } from "../../../../data/menuData";
-
-const ANIMATION_DURATION = 4000; // ms — matches the json's 100 frames @ 25fps
 
 const MainFood = () => {
   const { selectedCategory, setSelectedCategory } = useMenu();
   const [animatingId, setAnimatingId] = useState(null);
-  const timeoutRef = useRef(null);
 
   const menuItems = Object.entries(menuData).map(([id, category]) => ({
     id: parseInt(id),
@@ -18,15 +15,17 @@ const MainFood = () => {
     icon: category.icon,
   }));
 
+  // Play the animation once on mount, for whichever category is selected by default
+  useEffect(() => {
+    if (selectedCategory !== null && selectedCategory !== undefined) {
+      setAnimatingId(selectedCategory);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleSelect = (id) => {
     setSelectedCategory(id);
-
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setAnimatingId(id);
-    timeoutRef.current = setTimeout(
-      () => setAnimatingId(null),
-      ANIMATION_DURATION,
-    );
   };
 
   return (

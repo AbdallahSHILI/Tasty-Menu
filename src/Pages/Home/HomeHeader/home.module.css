@@ -1,6 +1,6 @@
 .headerContainer {
+  display: none; /* hidden by default (desktop/tablet) */
   width: 100%;
-  display: flex;
   justify-content: center;
   margin-top: 60px;
 }
@@ -8,21 +8,22 @@
 .headerImage {
   width: 100%;
   height: auto;
+  aspect-ratio: 1398 / 752;
   display: block;
   border-radius: 15px;
-  background-color: #f9db08;
-  object-fit: contain;
-  max-height: 200px;
+  object-fit: cover;
   max-width: 1400px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Make image more compact on mobile devices */
+/* Show only on mobile devices */
 @media screen and (max-width: 768px) {
+  .headerContainer {
+    display: flex;
+  }
+
   .headerImage {
     width: 90%;
-    max-height: 120px;
-    height: 120px;
-    object-fit: contain;
+    aspect-ratio: 1398 / 752;
   }
 }
